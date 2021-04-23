@@ -1,12 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  DialPadScreen,
-  RecentScreen,
-  ContactsScreen,
-  Favourites,
-} from "../screens";
+import { DialPadScreen, Favourites } from "../screens";
 import { TabIcon } from "../components";
+import RecentStackNavigator from "./RecentStackNavigator";
+import ContactStackNavigator from "./ContactStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +28,7 @@ export default function AppTabNavigation() {
       />
       <Tab.Screen
         name="Recent"
-        component={RecentScreen}
+        component={RecentStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabIcon
@@ -44,7 +41,7 @@ export default function AppTabNavigation() {
       />
       <Tab.Screen
         name="Contacts"
-        component={ContactsScreen}
+        component={ContactStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabIcon name="person-outline" active={focused} />

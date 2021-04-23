@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-} from "react-native";
+import React, { useLayoutEffect } from "react";
+import { View, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { Recent } from "../components/Recent";
 import { colors, fontSize } from "../theme";
 import Icon from "react-native-vector-icons/Feather";
@@ -95,32 +88,34 @@ const Seperator = () => (
   <View style={{ borderColor: colors.lightGrey, borderWidth: 0.5 }} />
 );
 
-export const RecentScreen = () => {
+export const RecentScreen = ({ navigation }: any) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity>
+          <Icon name="more-vertical" size={fontSize.large} />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
   return (
-    <>
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.title}>Recents</Text>
-          <TouchableOpacity>
-            <Icon name="more-vertical" size={fontSize.large} />
-          </TouchableOpacity>
-        </View>
-        <FlatList
-          data={data}
-          keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => <Recent details={item} />}
-          ItemSeparatorComponent={Seperator}
-        />
-      </View>
-    </>
+    <View style={styles.container}>
+      <FlatList
+        data={data}
+        keyExtractor={(item) => String(item.id)}
+        renderItem={({ item }) => <Recent details={item} />}
+        ItemSeparatorComponent={Seperator}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
     paddingHorizontal: 15,
     flex: 1,
+    backgroundColor: colors.BG,
   },
   headerContainer: {
     flexDirection: "row",

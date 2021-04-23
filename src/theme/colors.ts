@@ -1,6 +1,6 @@
 export const colors = {
   primary: "#e9a19f",
-  // lightPink: "#fcf4f8",
+  lightPrimary: "#fcf4f8",
   lightPink: "#f7dcda",
   lightPurple: "#d1caf0",
   purple: "#9886df",
@@ -11,4 +11,5 @@ export const colors = {
   lightGrey: "#c4c6cc",
   blue: "#4096b5",
   darkGrey: "#797986",
+  BG: "#fbfcfb",
 };

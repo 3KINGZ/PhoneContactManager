@@ -1155,6 +1155,14 @@
   dependencies:
     nanoid "^3.1.15"
 
+"@react-navigation/stack@^5.14.4":
+  version "5.14.4"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.4.tgz#32f6717c03494f0ca6cf0dd43d8302af824de9e9"
+  integrity sha512-gQjWK8JHtVkD1p7wzjtSPuScJI0mSAk/N/gzgjQZo+rDUwgM8rOTDcVNRbtEOqCEgLQcZrZQHwhOjkrJirehjQ==
+  dependencies:
+    color "^3.1.3"
+    react-native-iphone-x-helper "^1.3.0"
+
 "@sideway/address@^4.1.0":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.1.tgz#9e321e74310963fdf8eebfbee09c7bd69972de4d"
@@ -5798,6 +5806,11 @@ react-native-size-matters@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz#01bfd0d59454318f4e0b13fe9c1eb0523d70f2e0"
   integrity sha512-8/C0htHrFWeUm9N8JegmadovUfgTWkGBkDPZ1N3YkXtDWb+98Ya2gThiKcu445r8c7YhcrBfnHz/mYsXIusaOQ==
+
+react-native-tab-view@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-3.0.1.tgz#7ed8c5c4a0bb48fa8895e612d26e6d545ed03447"
+  integrity sha512-L7qXtYz5Z+NdWyu38zaJrlHA/8H6rNFRZXe3ydym12UEEPPoefbVZ71b9YK2O6QP0u4pUlzMpMVM/Lsz2DJ4jg==
 
 react-native-vector-icons@^8.1.0:
   version "8.1.0"
