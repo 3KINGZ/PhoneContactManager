@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* PhoneContactManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PhoneContactManagerTests.m */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E35EB945351245938309CC74 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E829A078EB904562B27CBCC8 /* AntDesign.ttf */; };
+		4C3DD49019804B2694F5A5AA /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 648550F59A0D46149C4E2124 /* Entypo.ttf */; };
+		394563B9972940389DA7C5D9 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90045D79E7514C16B04C6A1B /* EvilIcons.ttf */; };
+		DD14E07606974E4B8DF44FAB /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C448E7CD8760496D99634913 /* Feather.ttf */; };
+		B129B92AA9E844D0A138C67B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 384D69EC070C4FBF99C462B9 /* FontAwesome.ttf */; };
+		CD01C4454F0E4BCD9AEBE1AE /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0244868004BF4CC1B89D3AA0 /* FontAwesome5_Brands.ttf */; };
+		A15C29BE351C4A9997E425DD /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F542E7FCD6C24BA88272E778 /* FontAwesome5_Regular.ttf */; };
+		E286C796205147D28D490923 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2EA33FDAE2947DCA3C3A2C4 /* FontAwesome5_Solid.ttf */; };
+		BEF2E0A9041F4D7D94178EAC /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7F924CF064940438689DD3B /* Fontisto.ttf */; };
+		49C13585C240421AA14FBDA7 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F96653BBA7443909E40FB8D /* Foundation.ttf */; };
+		83874CE879D24C0E8C3E4B3F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B3AA15CBA134DC692A29968 /* Ionicons.ttf */; };
+		B791E0F5685C4FF2894B1179 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B32EBBFFDD04429FA78105EE /* MaterialCommunityIcons.ttf */; };
+		9879C341F9F947D5A08B2417 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F22CFE442AC452981AB3E54 /* MaterialIcons.ttf */; };
+		A0FEC1E2DF604755A523E2C1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B53513E739D14875A601DE42 /* Octicons.ttf */; };
+		C26955976E9544C99CABA28A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 233927524EBA408D901AA687 /* SimpleLineIcons.ttf */; };
+		ED695A78EE2A4A85A75D5370 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C482DFC1A024C45A8C2E58F /* Zocial.ttf */; };
+		120BEB842BB140CB8BCCF6B0 /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20FAF714EDE9499BA8A3F7E5 /* SourceSerifPro-Black.ttf */; };
+		8411020A4BD340648BEC8494 /* SourceSerifPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4A9753B3F41F79EABB3E1 /* SourceSerifPro-BlackItalic.ttf */; };
+		36CBFCD703E7448891C3DD05 /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CBB99FBC55C48D5856CD5A8 /* SourceSerifPro-Bold.ttf */; };
+		8CBD61492A12463D90844233 /* SourceSerifPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22E1CC886B884276A6312C6F /* SourceSerifPro-BoldItalic.ttf */; };
+		6CA56DF6EDCE4701AA75C90B /* SourceSerifPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56EEFB26DDBA4F4EA3F5B0DE /* SourceSerifPro-ExtraLight.ttf */; };
+		D10987B5097E4B70BB6B8F4C /* SourceSerifPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDE25FFEC07C4B759A873B74 /* SourceSerifPro-ExtraLightItalic.ttf */; };
+		EC78166CA0344BBCA82C6A02 /* SourceSerifPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 894DBD035FA64EEAA72C2A19 /* SourceSerifPro-Italic.ttf */; };
+		1BD7AB0D68784F44AACCC5DE /* SourceSerifPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06F80C689E0F4E45AC0789F9 /* SourceSerifPro-Light.ttf */; };
+		57DF68A14ED1479BBB610121 /* SourceSerifPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F8E20D149404E15BBDE152F /* SourceSerifPro-LightItalic.ttf */; };
+		788A5176AC234491AE4FFB98 /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F541BD73EB254083810EC09E /* SourceSerifPro-Regular.ttf */; };
+		CE8687CE6D6F400396336910 /* SourceSerifPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A882490CF284876AE8959E3 /* SourceSerifPro-SemiBold.ttf */; };
+		23D0DFD7A21440FF8D76F28B /* SourceSerifPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D79E0198A6F94D779C41C8AF /* SourceSerifPro-SemiBoldItalic.ttf */; };
+		24FC03BE96FE4DBCB0776E4B /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D784CB636B164EC39D02BB42 /* SourceSerifPro-Black.ttf */; };
+		9F1AFD9AC8A74B2FAC973F97 /* SourceSerifPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 458D4F1C157C43E99AECC856 /* SourceSerifPro-BlackItalic.ttf */; };
+		DDA1F95F152549899A8FA15A /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC58406DC31460F9BD54CD1 /* SourceSerifPro-Bold.ttf */; };
+		CD4D5C5E4D8744C7883016AD /* SourceSerifPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0844FBEECFFA465DA7DBFAB7 /* SourceSerifPro-BoldItalic.ttf */; };
+		86EE28181ECA49E78AC5149D /* SourceSerifPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CADFBD3E763E444DB4403E05 /* SourceSerifPro-ExtraLight.ttf */; };
+		F9AD7CF3A6D6410283630CBB /* SourceSerifPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 132C6FDAA434410084E8A354 /* SourceSerifPro-ExtraLightItalic.ttf */; };
+		005B1112F6D6418AB8B1E97B /* SourceSerifPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43D81A421CAE48C6B53AD9AD /* SourceSerifPro-Italic.ttf */; };
+		EEFAE122317B4DE4871BCC4C /* SourceSerifPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 860FF03879564213A0D3A5FA /* SourceSerifPro-Light.ttf */; };
+		B32EF97F59B64B058235E921 /* SourceSerifPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28DEBA4EF69A4EF2B77D6A35 /* SourceSerifPro-LightItalic.ttf */; };
+		2CF84229E2B24B19BACBA55C /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE5946B6DC40E8B964593F /* SourceSerifPro-Regular.ttf */; };
+		E261F43387FD4D188F17398F /* SourceSerifPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5CE816448A040768D4F39EE /* SourceSerifPro-SemiBold.ttf */; };
+		CBF6955C0D674DA9B4604B5E /* SourceSerifPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D1091C57944C7BB2F0DEBA /* SourceSerifPro-SemiBoldItalic.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = PhoneContactManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* PhoneContactManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneContactManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* PhoneContactManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneContactManagerTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* PhoneContactManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneContactManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PhoneContactManager/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PhoneContactManager/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PhoneContactManager/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoneContactManager/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PhoneContactManager/main.m; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PhoneContactManager/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E829A078EB904562B27CBCC8 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		648550F59A0D46149C4E2124 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		90045D79E7514C16B04C6A1B /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C448E7CD8760496D99634913 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		384D69EC070C4FBF99C462B9 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0244868004BF4CC1B89D3AA0 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F542E7FCD6C24BA88272E778 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B2EA33FDAE2947DCA3C3A2C4 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7F924CF064940438689DD3B /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F96653BBA7443909E40FB8D /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2B3AA15CBA134DC692A29968 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B32EBBFFDD04429FA78105EE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F22CFE442AC452981AB3E54 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B53513E739D14875A601DE42 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		233927524EBA408D901AA687 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1C482DFC1A024C45A8C2E58F /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20FAF714EDE9499BA8A3F7E5 /* SourceSerifPro-Black.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Black.ttf"; path = "../assets/fonts/SourceSerifPro-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2ED4A9753B3F41F79EABB3E1 /* SourceSerifPro-BlackItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-BlackItalic.ttf"; path = "../assets/fonts/SourceSerifPro-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5CBB99FBC55C48D5856CD5A8 /* SourceSerifPro-Bold.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Bold.ttf"; path = "../assets/fonts/SourceSerifPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		22E1CC886B884276A6312C6F /* SourceSerifPro-BoldItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-BoldItalic.ttf"; path = "../assets/fonts/SourceSerifPro-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		56EEFB26DDBA4F4EA3F5B0DE /* SourceSerifPro-ExtraLight.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-ExtraLight.ttf"; path = "../assets/fonts/SourceSerifPro-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BDE25FFEC07C4B759A873B74 /* SourceSerifPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-ExtraLightItalic.ttf"; path = "../assets/fonts/SourceSerifPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		894DBD035FA64EEAA72C2A19 /* SourceSerifPro-Italic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Italic.ttf"; path = "../assets/fonts/SourceSerifPro-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		06F80C689E0F4E45AC0789F9 /* SourceSerifPro-Light.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Light.ttf"; path = "../assets/fonts/SourceSerifPro-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3F8E20D149404E15BBDE152F /* SourceSerifPro-LightItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-LightItalic.ttf"; path = "../assets/fonts/SourceSerifPro-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F541BD73EB254083810EC09E /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Regular.ttf"; path = "../assets/fonts/SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A882490CF284876AE8959E3 /* SourceSerifPro-SemiBold.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-SemiBold.ttf"; path = "../assets/fonts/SourceSerifPro-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D79E0198A6F94D779C41C8AF /* SourceSerifPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-SemiBoldItalic.ttf"; path = "../assets/fonts/SourceSerifPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D784CB636B164EC39D02BB42 /* SourceSerifPro-Black.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Black.ttf"; path = "../src/assets/fonts/SourceSerifPro-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		458D4F1C157C43E99AECC856 /* SourceSerifPro-BlackItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-BlackItalic.ttf"; path = "../src/assets/fonts/SourceSerifPro-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ADC58406DC31460F9BD54CD1 /* SourceSerifPro-Bold.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Bold.ttf"; path = "../src/assets/fonts/SourceSerifPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0844FBEECFFA465DA7DBFAB7 /* SourceSerifPro-BoldItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-BoldItalic.ttf"; path = "../src/assets/fonts/SourceSerifPro-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CADFBD3E763E444DB4403E05 /* SourceSerifPro-ExtraLight.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-ExtraLight.ttf"; path = "../src/assets/fonts/SourceSerifPro-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		132C6FDAA434410084E8A354 /* SourceSerifPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-ExtraLightItalic.ttf"; path = "../src/assets/fonts/SourceSerifPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43D81A421CAE48C6B53AD9AD /* SourceSerifPro-Italic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Italic.ttf"; path = "../src/assets/fonts/SourceSerifPro-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		860FF03879564213A0D3A5FA /* SourceSerifPro-Light.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Light.ttf"; path = "../src/assets/fonts/SourceSerifPro-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28DEBA4EF69A4EF2B77D6A35 /* SourceSerifPro-LightItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-LightItalic.ttf"; path = "../src/assets/fonts/SourceSerifPro-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6ACE5946B6DC40E8B964593F /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-Regular.ttf"; path = "../src/assets/fonts/SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E5CE816448A040768D4F39EE /* SourceSerifPro-SemiBold.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-SemiBold.ttf"; path = "../src/assets/fonts/SourceSerifPro-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		30D1091C57944C7BB2F0DEBA /* SourceSerifPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "SourceSerifPro-SemiBoldItalic.ttf"; path = "../src/assets/fonts/SourceSerifPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* PhoneContactManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* PhoneContactManagerTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = PhoneContactManagerTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* PhoneContactManager */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = PhoneContactManager;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* PhoneContactManager */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* PhoneContactManagerTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				4C3CEED0D28F47758BE2AE1B /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* PhoneContactManager.app */,
+				00E356EE1AD99517003FC87E /* PhoneContactManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C3CEED0D28F47758BE2AE1B /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E829A078EB904562B27CBCC8 /* AntDesign.ttf */,
+				648550F59A0D46149C4E2124 /* Entypo.ttf */,
+				90045D79E7514C16B04C6A1B /* EvilIcons.ttf */,
+				C448E7CD8760496D99634913 /* Feather.ttf */,
+				384D69EC070C4FBF99C462B9 /* FontAwesome.ttf */,
+				0244868004BF4CC1B89D3AA0 /* FontAwesome5_Brands.ttf */,
+				F542E7FCD6C24BA88272E778 /* FontAwesome5_Regular.ttf */,
+				B2EA33FDAE2947DCA3C3A2C4 /* FontAwesome5_Solid.ttf */,
+				A7F924CF064940438689DD3B /* Fontisto.ttf */,
+				0F96653BBA7443909E40FB8D /* Foundation.ttf */,
+				2B3AA15CBA134DC692A29968 /* Ionicons.ttf */,
+				B32EBBFFDD04429FA78105EE /* MaterialCommunityIcons.ttf */,
+				0F22CFE442AC452981AB3E54 /* MaterialIcons.ttf */,
+				B53513E739D14875A601DE42 /* Octicons.ttf */,
+				233927524EBA408D901AA687 /* SimpleLineIcons.ttf */,
+				1C482DFC1A024C45A8C2E58F /* Zocial.ttf */,
+				20FAF714EDE9499BA8A3F7E5 /* SourceSerifPro-Black.ttf */,
+				2ED4A9753B3F41F79EABB3E1 /* SourceSerifPro-BlackItalic.ttf */,
+				5CBB99FBC55C48D5856CD5A8 /* SourceSerifPro-Bold.ttf */,
+				22E1CC886B884276A6312C6F /* SourceSerifPro-BoldItalic.ttf */,
+				56EEFB26DDBA4F4EA3F5B0DE /* SourceSerifPro-ExtraLight.ttf */,
+				BDE25FFEC07C4B759A873B74 /* SourceSerifPro-ExtraLightItalic.ttf */,
+				894DBD035FA64EEAA72C2A19 /* SourceSerifPro-Italic.ttf */,
+				06F80C689E0F4E45AC0789F9 /* SourceSerifPro-Light.ttf */,
+				3F8E20D149404E15BBDE152F /* SourceSerifPro-LightItalic.ttf */,
+				F541BD73EB254083810EC09E /* SourceSerifPro-Regular.ttf */,
+				8A882490CF284876AE8959E3 /* SourceSerifPro-SemiBold.ttf */,
+				D79E0198A6F94D779C41C8AF /* SourceSerifPro-SemiBoldItalic.ttf */,
+				D784CB636B164EC39D02BB42 /* SourceSerifPro-Black.ttf */,
+				458D4F1C157C43E99AECC856 /* SourceSerifPro-BlackItalic.ttf */,
+				ADC58406DC31460F9BD54CD1 /* SourceSerifPro-Bold.ttf */,
+				0844FBEECFFA465DA7DBFAB7 /* SourceSerifPro-BoldItalic.ttf */,
+				CADFBD3E763E444DB4403E05 /* SourceSerifPro-ExtraLight.ttf */,
+				132C6FDAA434410084E8A354 /* SourceSerifPro-ExtraLightItalic.ttf */,
+				43D81A421CAE48C6B53AD9AD /* SourceSerifPro-Italic.ttf */,
+				860FF03879564213A0D3A5FA /* SourceSerifPro-Light.ttf */,
+				28DEBA4EF69A4EF2B77D6A35 /* SourceSerifPro-LightItalic.ttf */,
+				6ACE5946B6DC40E8B964593F /* SourceSerifPro-Regular.ttf */,
+				E5CE816448A040768D4F39EE /* SourceSerifPro-SemiBold.ttf */,
+				30D1091C57944C7BB2F0DEBA /* SourceSerifPro-SemiBoldItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* PhoneContactManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PhoneContactManagerTests" */;
+			buildPhases = (
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = PhoneContactManagerTests;
+			productName = PhoneContactManagerTests;
+			productReference = 00E356EE1AD99517003FC87E /* PhoneContactManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* PhoneContactManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PhoneContactManager" */;
+			buildPhases = (
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneContactManager;
+			productName = PhoneContactManager;
+			productReference = 13B07F961A680F5B00A75B9A /* PhoneContactManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PhoneContactManager" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* PhoneContactManager */,
+				00E356ED1AD99517003FC87E /* PhoneContactManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E35EB945351245938309CC74 /* AntDesign.ttf in Resources */,
+				4C3DD49019804B2694F5A5AA /* Entypo.ttf in Resources */,
+				394563B9972940389DA7C5D9 /* EvilIcons.ttf in Resources */,
+				DD14E07606974E4B8DF44FAB /* Feather.ttf in Resources */,
+				B129B92AA9E844D0A138C67B /* FontAwesome.ttf in Resources */,
+				CD01C4454F0E4BCD9AEBE1AE /* FontAwesome5_Brands.ttf in Resources */,
+				A15C29BE351C4A9997E425DD /* FontAwesome5_Regular.ttf in Resources */,
+				E286C796205147D28D490923 /* FontAwesome5_Solid.ttf in Resources */,
+				BEF2E0A9041F4D7D94178EAC /* Fontisto.ttf in Resources */,
+				49C13585C240421AA14FBDA7 /* Foundation.ttf in Resources */,
+				83874CE879D24C0E8C3E4B3F /* Ionicons.ttf in Resources */,
+				B791E0F5685C4FF2894B1179 /* MaterialCommunityIcons.ttf in Resources */,
+				9879C341F9F947D5A08B2417 /* MaterialIcons.ttf in Resources */,
+				A0FEC1E2DF604755A523E2C1 /* Octicons.ttf in Resources */,
+				C26955976E9544C99CABA28A /* SimpleLineIcons.ttf in Resources */,
+				ED695A78EE2A4A85A75D5370 /* Zocial.ttf in Resources */,
+				120BEB842BB140CB8BCCF6B0 /* SourceSerifPro-Black.ttf in Resources */,
+				8411020A4BD340648BEC8494 /* SourceSerifPro-BlackItalic.ttf in Resources */,
+				36CBFCD703E7448891C3DD05 /* SourceSerifPro-Bold.ttf in Resources */,
+				8CBD61492A12463D90844233 /* SourceSerifPro-BoldItalic.ttf in Resources */,
+				6CA56DF6EDCE4701AA75C90B /* SourceSerifPro-ExtraLight.ttf in Resources */,
+				D10987B5097E4B70BB6B8F4C /* SourceSerifPro-ExtraLightItalic.ttf in Resources */,
+				EC78166CA0344BBCA82C6A02 /* SourceSerifPro-Italic.ttf in Resources */,
+				1BD7AB0D68784F44AACCC5DE /* SourceSerifPro-Light.ttf in Resources */,
+				57DF68A14ED1479BBB610121 /* SourceSerifPro-LightItalic.ttf in Resources */,
+				788A5176AC234491AE4FFB98 /* SourceSerifPro-Regular.ttf in Resources */,
+				CE8687CE6D6F400396336910 /* SourceSerifPro-SemiBold.ttf in Resources */,
+				23D0DFD7A21440FF8D76F28B /* SourceSerifPro-SemiBoldItalic.ttf in Resources */,
+				24FC03BE96FE4DBCB0776E4B /* SourceSerifPro-Black.ttf in Resources */,
+				9F1AFD9AC8A74B2FAC973F97 /* SourceSerifPro-BlackItalic.ttf in Resources */,
+				DDA1F95F152549899A8FA15A /* SourceSerifPro-Bold.ttf in Resources */,
+				CD4D5C5E4D8744C7883016AD /* SourceSerifPro-BoldItalic.ttf in Resources */,
+				86EE28181ECA49E78AC5149D /* SourceSerifPro-ExtraLight.ttf in Resources */,
+				F9AD7CF3A6D6410283630CBB /* SourceSerifPro-ExtraLightItalic.ttf in Resources */,
+				005B1112F6D6418AB8B1E97B /* SourceSerifPro-Italic.ttf in Resources */,
+				EEFAE122317B4DE4871BCC4C /* SourceSerifPro-Light.ttf in Resources */,
+				B32EF97F59B64B058235E921 /* SourceSerifPro-LightItalic.ttf in Resources */,
+				2CF84229E2B24B19BACBA55C /* SourceSerifPro-Regular.ttf in Resources */,
+				E261F43387FD4D188F17398F /* SourceSerifPro-SemiBold.ttf in Resources */,
+				CBF6955C0D674DA9B4604B5E /* SourceSerifPro-SemiBoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* PhoneContactManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* PhoneContactManager */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PhoneContactManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneContactManager.app/PhoneContactManager";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = PhoneContactManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneContactManager.app/PhoneContactManager";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = PhoneContactManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = PhoneContactManager;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = PhoneContactManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = PhoneContactManager;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PhoneContactManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PhoneContactManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PhoneContactManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
