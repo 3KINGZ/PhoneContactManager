@@ -1,9 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RecentScreen, RecentsDetail } from "../screens";
-import { colors, fontSize } from "../theme";
-import { TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/Feather";
+import { headerProps } from "./navigationTheme";
 
 const Stack = createStackNavigator();
 
@@ -14,13 +12,7 @@ const RecentStackNavigator = () => {
         name="Recent"
         component={RecentScreen}
         options={{
-          headerTitleStyle: {
-            fontSize: fontSize.extralarge,
-            fontFamily: "SourceSerifPro-SemiBold",
-          },
-          headerStyle: {
-            backgroundColor: colors.BG,
-          },
+          ...headerProps,
         }}
       />
       <Stack.Screen name="Recent Detail" component={RecentsDetail} />
