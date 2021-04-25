@@ -19,7 +19,8 @@ import { useNavigation } from "@react-navigation/native";
 
 interface IRecent {
   details: {
-    id: number;
+    id: string;
+    contactId?: string;
     name: string;
     number: string;
     time: string;

@@ -3,6 +3,8 @@ import { View, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { Recent } from "../components/Recent";
 import { colors, fontSize } from "../theme";
 import Icon from "react-native-vector-icons/Feather";
+import recents from "../utils/constants/recents";
+import { Recents } from "../components";
 
 const data = [
   {
@@ -101,12 +103,7 @@ export const RecentScreen = ({ navigation }: any) => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => <Recent details={item} />}
-        ItemSeparatorComponent={Seperator}
-      />
+      <Recents logs={recents} />
     </View>
   );
 };

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-const data = [
+const recents = [
   {
     id: uuidv4(),
     contactId: "Amilia Elie",
@@ -58,8 +58,9 @@ const data = [
     number: "+880 33456 777",
   },
   {
-    id: 8,
-    name: "Adward Christiano",
+    id: uuidv4(),
+    contactId: "cristiano ronaldo",
+    name: "Cristiano Ronaldo",
     type: "missed",
     time: "Today 9:45AM",
     number: "+880 33456 777",
@@ -89,3 +90,5 @@ const data = [
     number: "+880 33456 777",
   },
 ];
+
+export default recents;

@@ -1,6 +1,4 @@
-import "react-native-get-random-values";
 import contactImages from "../../assets/images";
-import { v4 as uuidv4 } from "uuid";
 
 let contacts = [
   {
