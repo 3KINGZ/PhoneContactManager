@@ -4,3 +4,4 @@ export * from "./ContactsScreen";
 export * from "./Favourites";
 export * from "./RecentsDetail";
 export * from "./ContactDetail";
+export * from "./AddContact";

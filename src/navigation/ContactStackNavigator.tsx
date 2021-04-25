@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ContactsScreen, ContactDetail } from "../screens";
+import { ContactsScreen, ContactDetail, AddContact } from "../screens";
 import { headerProps } from "./navigationTheme";
 
 const Stack = createStackNavigator();
@@ -15,7 +15,20 @@ const ContactStackNavigator = () => {
           ...headerProps,
         }}
       />
-      <Stack.Screen name="Contacts Detail" component={ContactDetail} />
+      <Stack.Screen
+        name="Contacts Detail"
+        component={ContactDetail}
+        options={{
+          ...headerProps,
+        }}
+      />
+      <Stack.Screen
+        name="Create Contact"
+        component={AddContact}
+        options={{
+          ...headerProps,
+        }}
+      />
     </Stack.Navigator>
   );
 };

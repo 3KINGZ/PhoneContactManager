@@ -4,17 +4,20 @@ import { moderateScale } from "react-native-size-matters";
 import { colors, fontSize } from "../../theme";
 import ContactTitle from "./ContactTitle";
 import { useNavigation } from "@react-navigation/native";
-interface IContact {
-  contact: { image: string; name: string; address: string };
+interface IC {
+  contact: IContact;
 }
 
-const Contact = ({ contact }: IContact) => {
+export const Contact = ({ contact }: IC) => {
   const navigation = useNavigation();
 
-  const { image, name, address } = contact;
+  const { contactId, image, name, address } = contact;
 
   return (
-    <TouchableHighlight onPress={() => navigation.navigate("Contacts Detail")}>
+    <TouchableHighlight
+      underlayColor={colors.veryLightGrey}
+      onPress={() => navigation.navigate("Contacts Detail", { id: contactId })}
+    >
       <View
         style={{
           flexDirection: "row",
@@ -67,5 +70,3 @@ const Contact = ({ contact }: IContact) => {
     </TouchableHighlight>
   );
 };
-
-export default Contact;

@@ -1,76 +1,53 @@
-import React from "react";
-import { View, FlatList } from "react-native";
-import contactImages from "../assets/images";
-import Contact from "../components/Contact/Contact";
-import { colors } from "../theme";
-
-const contacts = [
-  {
-    name: "Amilia Elie",
-    address: "South Sylhet",
-    email: "amiliaelie@gmail.com",
-    number: "+880 33456 777",
-    image: contactImages.image2,
-  },
-  {
-    name: "Allison Becker",
-    address: "Rio de janeiro, Brazil ",
-    email: "abecker@gmail.com",
-    number: "+880 33456 777",
-  },
-  {
-    name: "Sergio Ramos",
-    address: "Madrid, Spain",
-    email: "ramos@gmail.com",
-    number: "+880 33456 777",
-  },
-  {
-    name: "Marco Verrati",
-    address: "Rome, Italy",
-    email: "mverrati@gmail.com",
-    number: "+880 33456 777",
-    image: contactImages.image4,
-  },
-  {
-    name: "Kylian Mbappe",
-    address: "Paris, France",
-    email: "amiliaelie@gmail.com",
-    number: "+880 33456 777",
-  },
-  {
-    name: "Trent Arnold",
-    address: "Liverpool, England",
-    email: "tarnold@gmail.com",
-    number: "+880 33456 777",
-    image: contactImages.image5,
-  },
-  {
-    name: "Wilfred Ndidi",
-    address: "Lagos, Nigeria",
-    email: "wilNdidi@gmail.com",
-    number: "+234 33456 777",
-    image: contactImages.image3,
-  },
-  {
-    name: "Zlatan Ibrahimovic",
-    address: "Sweden",
-    email: "zIbra@gmail.com",
-    number: "+122 33456 777",
-    image: contactImages.image1,
-  },
-];
+import React, { useState, useLayoutEffect } from "react";
+import { View, FlatList, TouchableOpacity } from "react-native";
+import { Contact, SearchBar } from "../components";
+import { colors, fontSize } from "../theme";
+import contacts from "../utils/constants/contacts";
+import Icon from "react-native-vector-icons/AntDesign";
+import routes from "../navigation/routes";
 
 const Seperator = () => {
   return <View style={{ paddingVertical: 5 }} />;
 };
 
-export const ContactsScreen = () => {
+export const ContactsScreen = ({ navigation }: any) => {
+  const [filteredContacts, setFilteredContacts] = useState(contacts);
+
+  const filterContacts = (search: string) => {
+    setFilteredContacts(
+      search === ""
+        ? contacts
+        : contacts.filter((contact: { name: string }) =>
+            contact.name.toLowerCase().includes(search.toLowerCase()),
+          ),
+    );
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate(routes.CREATE_CONTACT)}
+        >
+          <Icon
+            style={{ paddingRight: 15 }}
+            name="plus"
+            size={fontSize.large}
+            color={colors.primary}
+          />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
   return (
     <View
       style={{ flex: 1, paddingHorizontal: 15, backgroundColor: colors.BG }}
     >
+      <SearchBar onChange={filterContacts} />
       <FlatList
-        data={contacts}
+        data={filteredContacts}
+        keyExtractor={(item) => item.contactId}
         renderItem={({ item }) => <Contact contact={item} />}
         ItemSeparatorComponent={Seperator}
       />

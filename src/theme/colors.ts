@@ -12,4 +12,5 @@ export const colors = {
   blue: "#4096b5",
   darkGrey: "#797986",
   BG: "#fbfcfb",
+  veryLightGrey: "#eaeaea",
 };
