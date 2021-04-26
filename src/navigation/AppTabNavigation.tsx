@@ -4,6 +4,7 @@ import { DialPadScreen, Favourites } from "../screens";
 import { TabIcon } from "../components";
 import RecentStackNavigator from "./RecentStackNavigator";
 import ContactStackNavigator from "./ContactStackNavigator";
+import FavouritesStackNavigator from "./FavouritesStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +51,7 @@ export default function AppTabNavigation() {
       />
       <Tab.Screen
         name="Favourites"
-        component={Favourites}
+        component={FavouritesStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabIcon name="heart-outline" active={focused} />
