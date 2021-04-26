@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableHighlight } from "react-native";
 import { moderateScale } from "react-native-size-matters";
-import { colors, fontSize } from "../../theme";
-import ContactTitle from "./ContactTitle";
+import { colors, fontSize } from "../theme";
 import { useNavigation } from "@react-navigation/native";
+import { ContactTitle } from "./ContactTitle";
+
 interface IC {
   contact: IContact;
 }
@@ -36,7 +37,7 @@ export const Contact = ({ contact }: IC) => {
             }}
           />
         ) : (
-          <ContactTitle letter={name[0]} />
+          <ContactTitle type="small" name={name} />
         )}
         <View
           style={{

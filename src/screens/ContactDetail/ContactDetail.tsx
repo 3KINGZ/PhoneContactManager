@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
-import { BigContactTitle } from "../../components";
+import React, { useEffect, useState, useLayoutEffect } from "react";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { ContactTitle } from "../../components";
 import { colors, fontSize } from "../../theme";
 import contacts from "../../utils/constants/contacts";
 import recents from "../../utils/constants/recents";
 import { ContactTabView } from "./partial/ContactTabView";
+import Icon from "react-native-vector-icons/Feather";
 
-export const ContactDetail = ({ route }: any) => {
+export const ContactDetail = ({ route, navigation }: any) => {
   const [contact, setContact] = useState<IContact | any>({});
   const [logs, setLogs] = useState([]);
   const id = route.params.id;
@@ -20,6 +21,20 @@ export const ContactDetail = ({ route }: any) => {
     setLogs(logs);
   }, []);
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity>
+          <Icon
+            style={{ marginRight: 15 }}
+            name="more-vertical"
+            size={fontSize.large}
+          />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
   const { name, image, address, email, number } = contact;
 
   return (
@@ -30,7 +45,7 @@ export const ContactDetail = ({ route }: any) => {
           style={{ width: 150, height: 200, marginTop: 20, borderRadius: 5 }}
         />
       ) : (
-        <BigContactTitle title={name} />
+        <ContactTitle name={name} />
       )}
       <View style={{ marginTop: 10 }}>
         <Text

@@ -20,6 +20,7 @@ const ContactStackNavigator = () => {
         component={ContactDetail}
         options={{
           ...headerProps,
+          title: "",
         }}
       />
       <Stack.Screen
