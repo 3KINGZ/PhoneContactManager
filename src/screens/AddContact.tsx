@@ -75,7 +75,7 @@ export const AddContact = () => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView style={{ flex: 1, backgroundColor: colors.BG }}>
         <View style={styles.container}>
           <TouchableOpacity onPress={() => setShowModal(true)}>
             <View style={styles.imageInput}>
