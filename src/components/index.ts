@@ -6,3 +6,5 @@ export * from "./Recents";
 export * from "./ContactTitle";
 export * from "./Favourite";
 export * from "./Recent";
+export * from "./Button";
+export * from "./Input";

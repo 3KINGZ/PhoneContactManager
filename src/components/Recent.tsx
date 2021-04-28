@@ -11,11 +11,11 @@ import {
 import {
   moderateScale,
   moderateVerticalScale,
-  scale,
 } from "react-native-size-matters";
 import Icon from "react-native-vector-icons/Feather";
-import { colors, fontSize } from "../theme";
 import { useNavigation } from "@react-navigation/native";
+
+import { colors, fontSize } from "../theme";
 
 interface IRecent {
   details: {

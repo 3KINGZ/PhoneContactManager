@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
+import { scale } from "react-native-size-matters";
 import Icon from "react-native-vector-icons/FontAwesome";
 import IIcon from "react-native-vector-icons/Ionicons";
+
 import { fontSize, colors } from "../theme";
 
 const Phone = () => <Icon name="phone" color={colors.purple} size={24} />;
@@ -19,11 +15,11 @@ const Location = () => (
 );
 
 interface IInput {
-  icon: string;
+  icon?: string;
   placeholder: string;
   subtitle: string;
   value: string;
-  onChange: () => string;
+  onChange: (text: string) => void;
 }
 
 export const Input = ({
@@ -46,7 +42,7 @@ export const Input = ({
       </View>
       <View style={styles.infoContainer}>
         {!value ? (
-          <View style={{ zIndex: 1 }}>
+          <View style={{ zIndex: 0 }}>
             <Text style={styles.placeholder}>{placeholder}</Text>
             <Text style={styles.subtitle}>{subtitle}</Text>
           </View>
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     backgroundColor: colors.BG,
     marginVertical: 15,
-    height: 50,
+    height: scale(50),
   },
   infoContainer: {
     marginLeft: 10,
@@ -87,13 +83,14 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     flex: 1,
+    height: 100,
+    fontSize: scale(18),
   },
   inputAbs: {
     position: "absolute",
     width: "100%",
     flex: 1,
-    height: 100,
+    height: scale(40),
     zIndex: 0,
-    marginTop: -100,
   },
 });
