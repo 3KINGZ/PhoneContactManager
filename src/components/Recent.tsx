@@ -16,6 +16,7 @@ import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
 import { colors, fontSize } from "../theme";
+import { MenuModal } from "./MenuModal";
 
 interface IRecent {
   details: {
@@ -104,6 +105,19 @@ export const Recent = ({ details }: IRecent) => {
     console.log(id);
   };
 
+  const options = [
+    {
+      id: "1",
+      title: "Delete all call logs of this number",
+      action: () => console.log("Delete All Call Logs For this Number"),
+    },
+    {
+      id: "2",
+      title: "Copy number",
+      action: () => console.log("Copy Number"),
+    },
+  ];
+
   return (
     <>
       <TouchableHighlight
@@ -141,9 +155,14 @@ export const Recent = ({ details }: IRecent) => {
         onRequestClose={() => setShowModal(!showModal)}
         animationType="fade"
       >
-        <ActionModal
+        {/* <ActionModal
           // onPress={() => setShowModal(!showModal)}
           onClose={() => setShowModal(!showModal)}
+        /> */}
+        <MenuModal
+          visible={showModal}
+          options={options}
+          onClose={() => setShowModal(false)}
         />
       </Modal>
     </>

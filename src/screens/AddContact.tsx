@@ -1,87 +1,52 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  Modal,
-  ScrollView,
-} from "react-native";
-import { scale, verticalScale, moderateScale } from "react-native-size-matters";
-import Icon from "react-native-vector-icons/Ionicons";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { scale, verticalScale } from "react-native-size-matters";
 import * as ImagePicker from "react-native-image-picker/src";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
 
-import { Input, Button } from "../components";
+import { Input, Button, MenuModal, ImageInput } from "../components";
 import { colors } from "../theme";
-
-const CameraModal = ({ onClose }: any) => {
-  return (
-    <TouchableWithoutFeedback onPress={onClose}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 22,
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: colors.lightPrimary,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 4,
-            elevation: 5,
-            borderRadius: 10,
-            padding: moderateScale(10),
-          }}
-        >
-          <TouchableOpacity
-            onPress={() =>
-              ImagePicker.launchCamera(
-                { mediaType: "photo", cameraType: "back" },
-                () => console.log("hi"),
-              )
-            }
-          >
-            <Text style={styles.actionBTN}>Open Camera</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              ImagePicker.launchImageLibrary({ mediaType: "photo" }, () =>
-                console.log("hi"),
-              )
-            }
-          >
-            <Text style={styles.actionBTNLast}>Open Gallery</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
+import { useForm } from "../hooks";
 
 export const AddContact = () => {
   const [showModal, setShowModal] = useState(false);
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [number, setNumber] = useState("");
+  const [state, actions] = useForm();
+
+  const { name, address, number, image } = state;
+  const { setName, setAddress, setNumber, setImage } = actions;
+
+  const options = [
+    {
+      id: "1",
+      title: "Open Camera",
+      action: () =>
+        ImagePicker.launchCamera(
+          { mediaType: "photo", cameraType: "back" },
+          () => console.log("hi"),
+        ),
+    },
+    {
+      id: "2",
+      title: "Open Gallery",
+      action: () =>
+        ImagePicker.launchImageLibrary({ mediaType: "photo" }, (image: any) =>
+          setImage(image),
+        ),
+    },
+    {
+      id: "3",
+      title: "Remove Image",
+      action: () => {
+        setImage(""), setShowModal(false);
+      },
+    },
+  ];
 
   return (
     <>
       <ScrollView style={{ flex: 1, backgroundColor: colors.BG }}>
         <View style={styles.container}>
-          <TouchableOpacity onPress={() => setShowModal(true)}>
-            <View style={styles.imageInput}>
-              <Icon name="camera-outline" size={38} color={colors.primary} />
-            </View>
-          </TouchableOpacity>
+          <ImageInput image={image} onPress={() => setShowModal(true)} />
           <View style={styles.textContainer}>
             <Text style={styles.text1}>Add Photo</Text>
             <Text style={styles.text2}>Will only be save on the phone</Text>
@@ -129,15 +94,12 @@ export const AddContact = () => {
             </View>
           </KeyboardAwareScrollView>
         </View>
-        <Modal
-          visible={showModal}
-          transparent={true}
-          onRequestClose={() => setShowModal(!showModal)}
-          animationType="fade"
-        >
-          <CameraModal onClose={() => setShowModal(false)} />
-        </Modal>
       </ScrollView>
+      <MenuModal
+        visible={showModal}
+        options={options}
+        onClose={() => setShowModal(false)}
+      />
     </>
   );
 };
@@ -148,15 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.BG,
     alignItems: "center",
     paddingHorizontal: 30,
-  },
-  imageInput: {
-    width: 150,
-    height: 150,
-    backgroundColor: colors.lightPink,
-    borderRadius: 5,
-    padding: 5,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingVertical: verticalScale(15),
   },
   textContainer: { marginVertical: verticalScale(10) },
   text1: {
@@ -172,17 +126,5 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: "100%",
     flex: 1,
-  },
-  actionBTN: {
-    borderColor: colors.lightGrey,
-    borderBottomWidth: 1,
-    width: "100%",
-    textAlign: "center",
-    paddingVertical: moderateScale(5),
-  },
-  actionBTNLast: {
-    width: "100%",
-    textAlign: "center",
-    paddingVertical: moderateScale(5),
   },
 });
