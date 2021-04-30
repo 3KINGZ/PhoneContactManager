@@ -44,7 +44,7 @@ export const Detail = ({ type, emailPhone }: IDetail) => {
           <View
             style={[
               styles.iconContainer,
-              { backgroundColor: colors.lightPink },
+              { backgroundColor: colors.secondary },
             ]}
           >
             <MIcon name="email" color={colors.primary} size={18} />
@@ -54,7 +54,7 @@ export const Detail = ({ type, emailPhone }: IDetail) => {
           <View
             style={[
               styles.iconContainer,
-              { backgroundColor: colors.lightPink },
+              { backgroundColor: colors.secondary },
             ]}
           >
             <IIcon

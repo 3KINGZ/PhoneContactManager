@@ -1,24 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
 import "react-native-gesture-handler";
 import "react-native-get-random-values";
 import "react-native-pager-view";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import AppTabNavigation from "./src/navigation/AppTabNavigation";
+import { Provider } from "react-redux";
+
+import RootStackNavigation from "./src/navigation/RootStackNavigation";
+import store from "./src/store";
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <AppTabNavigation />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootStackNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

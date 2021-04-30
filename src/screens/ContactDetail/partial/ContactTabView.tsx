@@ -12,7 +12,7 @@ const renderTabBar = (props: any) => (
     {...props}
     indicatorStyle={{
       backgroundColor: colors.BG,
-      borderColor: colors.red,
+      borderColor: colors.primary,
       borderWidth: 1,
     }}
     style={{
@@ -24,7 +24,7 @@ const renderTabBar = (props: any) => (
     renderLabel={({ route, focused }) => (
       <Text
         style={{
-          color: focused ? colors.red : colors.grey,
+          color: focused ? colors.primary : colors.grey,
           fontSize: fontSize.regular,
           fontWeight: "bold",
         }}

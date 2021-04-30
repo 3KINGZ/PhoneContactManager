@@ -36,7 +36,7 @@ const recentColors: { [key: string]: string } = {
 };
 
 const recentColorsBG: { [key: string]: string } = {
-  received: colors.lightPink,
+  received: colors.secondary,
   outgoing: colors.lightPurple,
   missed: colors.lightGrey,
 };
@@ -47,60 +47,14 @@ const recentIcon: { [key: string]: string } = {
   missed: "phone-missed",
 };
 
-const ActionModal = ({ onClose }: any) => {
-  return (
-    <TouchableWithoutFeedback onPress={onClose}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 22,
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: colors.lightPrimary,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 4,
-            elevation: 5,
-            borderRadius: 10,
-            padding: moderateScale(10),
-          }}
-        >
-          <TouchableOpacity onPress={onClose}>
-            <Text style={styles.actionBTN}>Delete call log</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.actionBTN}>
-              Delete all call logs of this number
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.actionBTN}>Copy number</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.actionBTNLast}>Copy number</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
-
 export const Recent = ({ details }: IRecent) => {
   const navigation = useNavigation();
 
-  const { id, name, number, time, type } = details;
+  const { id, contactId, name, number, time, type } = details;
 
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = (id: number) => {
+  const openModal = (id: string) => {
     setShowModal(true);
     console.log(id);
   };
@@ -122,7 +76,12 @@ export const Recent = ({ details }: IRecent) => {
     <>
       <TouchableHighlight
         underlayColor={colors.lightGrey}
-        onPress={() => navigation.navigate("Recent Detail")}
+        onPress={() =>
+          navigation.navigate("Call", {
+            screen: "Call-Outgoing",
+            params: { id: contactId },
+          })
+        }
         onLongPress={() => openModal(id)}
       >
         <View style={[styles.container]}>
@@ -155,10 +114,6 @@ export const Recent = ({ details }: IRecent) => {
         onRequestClose={() => setShowModal(!showModal)}
         animationType="fade"
       >
-        {/* <ActionModal
-          // onPress={() => setShowModal(!showModal)}
-          onClose={() => setShowModal(!showModal)}
-        /> */}
         <MenuModal
           visible={showModal}
           options={options}

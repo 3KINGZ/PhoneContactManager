@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
     paddingVertical: moderateScale(5),
     paddingHorizontal: moderateScale(15),
     borderRadius: 15,
-    backgroundColor: colors.lightPink,
+    backgroundColor: colors.secondary,
   },
 });

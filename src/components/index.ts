@@ -10,3 +10,4 @@ export * from "./Button";
 export * from "./Input";
 export * from "./MenuModal";
 export * from "./ImageInput";
+export * from "./CallButton";

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   imageInput: {
     width: 150,
     height: 150,
-    backgroundColor: colors.lightPink,
+    backgroundColor: colors.secondary,
     borderRadius: 5,
     padding: 5,
     alignItems: "center",

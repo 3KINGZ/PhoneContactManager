@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StatusBar, StyleSheet } from "react-native";
 import { colors, fontSize } from "../theme";
 import Icon from "react-native-vector-icons/Feather";
 import recents from "../utils/constants/recents";
@@ -22,6 +22,11 @@ export const RecentScreen = ({ navigation }: any) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor={colors.BG}
+        barStyle="dark-content"
+      />
       <Recents logs={recents} />
     </View>
   );
