@@ -7,7 +7,18 @@ const Seperator = () => (
   <View style={{ borderColor: colors.lightGrey, borderWidth: 0.5 }} />
 );
 
-export const Recents = ({ logs }: { logs: [{ id: string }] }) => {
+export const Recents = ({
+  logs,
+}: {
+  logs: {
+    id: string;
+    contactId: string;
+    name: string;
+    type: string;
+    time: string;
+    number: string;
+  }[];
+}) => {
   return (
     <FlatList
       data={logs}

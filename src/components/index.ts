@@ -11,3 +11,4 @@ export * from "./Input";
 export * from "./MenuModal";
 export * from "./ImageInput";
 export * from "./CallButton";
+export * from "./DialPadButton";

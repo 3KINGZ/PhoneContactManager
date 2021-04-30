@@ -6,6 +6,7 @@ import contacts from "../../utils/constants/contacts";
 import recents from "../../utils/constants/recents";
 import { ContactTabView } from "./partial/ContactTabView";
 import Icon from "react-native-vector-icons/Feather";
+import { scale } from "react-native-size-matters";
 
 export const ContactDetail = ({ route, navigation }: any) => {
   const [contact, setContact] = useState<IContact | any>({});
@@ -48,24 +49,8 @@ export const ContactDetail = ({ route, navigation }: any) => {
         <ContactTitle name={name} />
       )}
       <View style={{ marginTop: 10 }}>
-        <Text
-          style={{
-            fontSize: fontSize.large,
-            fontWeight: "bold",
-            textAlign: "center",
-          }}
-        >
-          {name}
-        </Text>
-        <Text
-          style={{
-            fontSize: fontSize.regular,
-            color: colors.grey,
-            textAlign: "center",
-          }}
-        >
-          {address}
-        </Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.address}>{address}</Text>
       </View>
       <ContactTabView email={email} number={number} logs={logs} />
     </View>
@@ -80,5 +65,16 @@ const styles = StyleSheet.create({
   },
   scene: {
     flex: 1,
+  },
+  name: {
+    fontSize: scale(20),
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#3d3e52",
+  },
+  address: {
+    fontSize: scale(17),
+    textAlign: "center",
+    color: colors.lightGrey,
   },
 });

@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import { colors, fontSize } from "../theme";
-import { ContactTitle } from "./ContactTitle";
 import { useNavigation } from "@react-navigation/native";
+import { scale } from "react-native-size-matters";
+
+import { colors } from "../theme";
+import { ContactTitle } from "./ContactTitle";
 
 export const Favourite = ({ contact }: any) => {
   const { contactId, image, name, address } = contact;
@@ -16,10 +18,7 @@ export const Favourite = ({ contact }: any) => {
     >
       <View style={styles.container}>
         {image ? (
-          <Image
-            source={image}
-            style={{ width: "100%", height: 200, borderRadius: 5 }}
-          />
+          <Image source={image} style={styles.image} />
         ) : (
           <ContactTitle name={name} />
         )}
@@ -34,19 +33,23 @@ export const Favourite = ({ contact }: any) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: 150,
     margin: 10,
   },
+  image: { width: "100%", height: 200, borderRadius: 5 },
   infoContainer: {
     marginTop: 5,
   },
   title: {
-    fontSize: fontSize.large,
+    fontSize: scale(18),
     textAlign: "center",
+    color: colors.grey,
+    fontWeight: "bold",
   },
   subtitle: {
-    fontSize: fontSize.regular,
-    color: colors.grey,
+    fontSize: scale(16),
     textAlign: "center",
+    color: colors.lightGrey,
   },
 });

@@ -17,13 +17,13 @@ export const TabIcon = ({ name, type, active }: ITabIcon) => {
       {type === "micon" ? (
         <MIcon
           name={name}
-          color={active ? colors.primary : colors.grey}
+          color={active ? colors.primary : colors.lightGrey}
           size={20}
         />
       ) : (
         <IIcon
           name={name}
-          color={active ? colors.primary : colors.grey}
+          color={active ? colors.primary : colors.lightGrey}
           size={20}
         />
       )}

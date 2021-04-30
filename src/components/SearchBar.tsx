@@ -7,7 +7,12 @@ import { colors, fontSize } from "../theme";
 export const SearchBar = ({ onChange }: any) => {
   return (
     <View style={styles.container}>
-      <Icon name="search1" size={22} color={colors.grey} style={styles.icon} />
+      <Icon
+        name="search1"
+        size={22}
+        color={colors.lightGrey}
+        style={styles.icon}
+      />
       <TextInput
         style={styles.input}
         placeholder="Search"

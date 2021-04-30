@@ -60,10 +60,6 @@ export const CallScreen = ({ navigation, route }: any) => {
 
   const titleCase = generateTitleCase(name);
 
-  const statusBarStyle = {
-    color: "red",
-  };
-
   return (
     <View style={styles.container}>
       <StatusBar

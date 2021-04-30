@@ -24,8 +24,16 @@ export const Detail = ({ type, emailPhone }: IDetail) => {
           )}
         </View>
         <View style={{ marginLeft: 10 }}>
-          <Text style={{ fontSize: fontSize.regular }}>{emailPhone}</Text>
-          <Text style={{ fontSize: fontSize.small, color: colors.grey }}>
+          <Text style={{ fontSize: fontSize.regular, color: colors.grey }}>
+            {emailPhone}
+          </Text>
+          <Text
+            style={{
+              fontSize: fontSize.small,
+              color: colors.grey,
+              color: colors.lightGrey,
+            }}
+          >
             {type === "email" ? "Gmail Account" : "Mobile Number"}
           </Text>
         </View>

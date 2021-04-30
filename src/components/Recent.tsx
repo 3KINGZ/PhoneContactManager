@@ -11,6 +11,7 @@ import {
 import {
   moderateScale,
   moderateVerticalScale,
+  scale,
 } from "react-native-size-matters";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
@@ -32,7 +33,7 @@ interface IRecent {
 const recentColors: { [key: string]: string } = {
   received: colors.primary,
   outgoing: colors.purple,
-  missed: colors.darkGrey,
+  missed: colors.grey,
 };
 
 const recentColorsBG: { [key: string]: string } = {
@@ -103,7 +104,7 @@ export const Recent = ({ details }: IRecent) => {
             </Text>
             <Text style={styles.number}>{number}</Text>
           </View>
-          <Text style={{ color: recentColors[type], fontSize: fontSize.small }}>
+          <Text style={{ color: recentColors[type], fontSize: scale(14) }}>
             {time}
           </Text>
         </View>
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: moderateScale(15),
+    paddingVertical: moderateVerticalScale(9),
     justifyContent: "space-between",
   },
   iconContainer: {
@@ -142,12 +143,13 @@ const styles = StyleSheet.create({
     width: "50%",
   },
   name: {
-    fontSize: fontSize.regular,
+    fontSize: scale(18),
     fontWeight: "bold",
+    color: colors.grey,
   },
   number: {
-    color: colors.grey,
-    fontSize: fontSize.small,
+    fontSize: scale(16),
+    color: colors.lightGrey,
   },
   actionBTN: {
     borderColor: colors.lightGrey,

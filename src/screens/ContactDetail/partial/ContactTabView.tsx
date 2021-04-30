@@ -24,7 +24,7 @@ const renderTabBar = (props: any) => (
     renderLabel={({ route, focused }) => (
       <Text
         style={{
-          color: focused ? colors.primary : colors.grey,
+          color: focused ? colors.primary : colors.lightGrey,
           fontSize: fontSize.regular,
           fontWeight: "bold",
         }}

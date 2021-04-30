@@ -37,6 +37,7 @@ export const Favourites = ({ navigation }: any) => {
     <View style={styles.container}>
       <SearchBar onChange={filterFavourites} />
       <FlatList
+        style={{ alignSelf: "center" }}
         data={filteredFavourites}
         numColumns={2}
         keyExtractor={(item) => item.contactId}
@@ -50,6 +51,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.BG,
     flex: 1,
-    marginHorizontal: 15,
+    paddingHorizontal: 10,
   },
 });

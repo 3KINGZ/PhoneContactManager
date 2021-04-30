@@ -5,6 +5,7 @@ import { colors, fontSize } from "../theme";
 import contacts from "../utils/constants/contacts";
 import Icon from "react-native-vector-icons/AntDesign";
 import routes from "../navigation/routes";
+import { scale } from "react-native-size-matters";
 
 const Seperator = () => {
   return <View style={{ paddingVertical: 5 }} />;
@@ -32,7 +33,7 @@ export const ContactsScreen = ({ navigation }: any) => {
           <Icon
             style={{ paddingRight: 15 }}
             name="plus"
-            size={fontSize.large}
+            size={scale(22)}
             color={colors.primary}
           />
         </TouchableOpacity>
