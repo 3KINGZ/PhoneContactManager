@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-
+import * as ImagePicker from "react-native-image-picker/src";
 interface IActions {
   setName: any;
   setAddress: any;
@@ -62,5 +62,30 @@ export const useForm = () => {
       dispatch({ type: types.updateImage, payload: value }),
   };
 
-  return [state, actions];
+  const options = [
+    {
+      id: "1",
+      title: "Open Camera",
+      action: () =>
+        ImagePicker.launchCamera(
+          { mediaType: "photo", cameraType: "back" },
+          () => console.log("hi"),
+        ),
+    },
+    {
+      id: "2",
+      title: "Open Gallery",
+      action: () =>
+        ImagePicker.launchImageLibrary({ mediaType: "photo" }, (image: any) =>
+          actions.setImage(image),
+        ),
+    },
+    {
+      id: "3",
+      title: "Remove Image",
+      action: () => actions.setImage(""),
+    },
+  ];
+
+  return [state, actions, options];
 };

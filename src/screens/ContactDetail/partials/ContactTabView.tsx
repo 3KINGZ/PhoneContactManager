@@ -36,12 +36,25 @@ const renderTabBar = (props: any) => (
 );
 
 interface IContactTabView {
+  id: string;
   number: string;
   email: string;
-  logs: [];
+  logs: {
+    id: string;
+    contactId: string;
+    name: string;
+    number: string;
+    time: string;
+    type: string;
+  }[];
 }
 
-export const ContactTabView = ({ number, email, logs }: IContactTabView) => {
+export const ContactTabView = ({
+  number,
+  email,
+  logs,
+  id,
+}: IContactTabView) => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: "first", title: "Details" },
@@ -49,7 +62,7 @@ export const ContactTabView = ({ number, email, logs }: IContactTabView) => {
   ]);
 
   const renderScene = SceneMap({
-    first: () => <Details email={email} phoneNumber={number} />,
+    first: () => <Details id={id} email={email} phoneNumber={number} />,
     second: () => <CallLogs logs={logs} />,
   });
 

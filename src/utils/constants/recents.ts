@@ -12,7 +12,7 @@ const recents = [
   {
     id: uuidv4(),
     contactId: "Sergio Ramos",
-    name: "Nitu Metro",
+    name: "Sergio Ramos",
     type: "outgoing",
     time: "Today 9:45AM",
     number: "+880 33456 777",
@@ -20,7 +20,7 @@ const recents = [
   {
     id: uuidv4(),
     contactId: "Allison Becker",
-    name: "Allison Beaker",
+    name: "Allison Becker",
     type: "received",
     time: "Today 9:45AM",
     number: "+880 33456 777",
@@ -59,7 +59,7 @@ const recents = [
   },
   {
     id: uuidv4(),
-    contactId: "cristiano ronaldo",
+    contactId: "Cristiano Ronaldo",
     name: "Cristiano Ronaldo",
     type: "missed",
     time: "Today 9:45AM",

@@ -1,11 +1,14 @@
 import React, { useLayoutEffect } from "react";
 import { View, TouchableOpacity, StatusBar, StyleSheet } from "react-native";
-import { colors, fontSize } from "../theme";
 import Icon from "react-native-vector-icons/Feather";
-import recents from "../utils/constants/recents";
+import { useSelector } from "react-redux";
+
+import { colors, fontSize } from "../theme";
 import { Recents } from "../components";
 
 export const RecentScreen = ({ navigation }: any) => {
+  const history = useSelector((state) => state.history.history);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -27,7 +30,7 @@ export const RecentScreen = ({ navigation }: any) => {
         backgroundColor={colors.BG}
         barStyle="dark-content"
       />
-      <Recents logs={recents} />
+      <Recents logs={history} />
     </View>
   );
 };

@@ -1,16 +1,17 @@
 import React, { useEffect, useState, useLayoutEffect } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { ContactTitle } from "../../components";
-import { colors, fontSize } from "../../theme";
-import contacts from "../../utils/constants/contacts";
-import recents from "../../utils/constants/recents";
-import { ContactTabView } from "./partial/ContactTabView";
 import Icon from "react-native-vector-icons/Feather";
 import { scale } from "react-native-size-matters";
 
+import { ContactTitle } from "../../components";
+import contacts from "../../utils/constants/contacts";
+import recents from "../../utils/constants/recents";
+import { ContactTabView } from "./partials/ContactTabView";
+import { colors, fontSize } from "../../theme";
+
 export const ContactDetail = ({ route, navigation }: any) => {
   const [contact, setContact] = useState<IContact | any>({});
-  const [logs, setLogs] = useState([]);
+  const [logs, setLogs] = useState<any>();
   const id = route.params.id;
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export const ContactDetail = ({ route, navigation }: any) => {
     });
   }, [navigation]);
 
-  const { name, image, address, email, number } = contact;
+  const { contactId, name, image, address, email, number } = contact;
 
   return (
     <View style={styles.container}>
@@ -52,7 +53,12 @@ export const ContactDetail = ({ route, navigation }: any) => {
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.address}>{address}</Text>
       </View>
-      <ContactTabView email={email} number={number} logs={logs} />
+      <ContactTabView
+        id={contactId}
+        email={email}
+        number={number}
+        logs={logs}
+      />
     </View>
   );
 };
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
     fontSize: scale(20),
     fontWeight: "bold",
     textAlign: "center",
-    color: "#3d3e52",
+    color: colors.grey,
   },
   address: {
     fontSize: scale(17),

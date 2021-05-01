@@ -1,18 +1,25 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import IIcon from "react-native-vector-icons/Ionicons";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/core";
+
 import { colors, fontSize } from "../theme";
 
 const gmail = require("../assets/images/gmail.png");
 
 interface IDetail {
+  id: string;
   type: string;
   emailPhone: string;
 }
 
-export const Detail = ({ type, emailPhone }: IDetail) => {
+export const Detail = ({ type, emailPhone, id }: IDetail) => {
+  const navigation = useNavigation();
+
+  console.log("detail comp", id);
+
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -30,7 +37,6 @@ export const Detail = ({ type, emailPhone }: IDetail) => {
           <Text
             style={{
               fontSize: fontSize.small,
-              color: colors.grey,
               color: colors.lightGrey,
             }}
           >
@@ -40,14 +46,23 @@ export const Detail = ({ type, emailPhone }: IDetail) => {
       </View>
       <View style={styles.iconMainContainer}>
         {type !== "email" ? (
-          <View
-            style={[
-              styles.iconContainer,
-              { backgroundColor: colors.lightPurple, marginRight: 8 },
-            ]}
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Call", {
+                screen: "Call-Outgoing",
+                params: { id },
+              })
+            }
           >
-            <Icon name="phone" color={colors.purple} size={18} />
-          </View>
+            <View
+              style={[
+                styles.iconContainer,
+                { backgroundColor: colors.lightPurple, marginRight: 8 },
+              ]}
+            >
+              <Icon name="phone" color={colors.purple} size={18} />
+            </View>
+          </TouchableOpacity>
         ) : (
           <View
             style={[

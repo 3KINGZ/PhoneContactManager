@@ -5,8 +5,6 @@ import {
   StyleSheet,
   Modal,
   TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
 } from "react-native";
 import {
   moderateScale,
@@ -16,7 +14,7 @@ import {
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
-import { colors, fontSize } from "../theme";
+import { colors } from "../theme";
 import { MenuModal } from "./MenuModal";
 
 interface IRecent {

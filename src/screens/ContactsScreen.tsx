@@ -1,17 +1,19 @@
 import React, { useState, useLayoutEffect } from "react";
 import { View, FlatList, TouchableOpacity } from "react-native";
-import { Contact, SearchBar } from "../components";
-import { colors, fontSize } from "../theme";
-import contacts from "../utils/constants/contacts";
 import Icon from "react-native-vector-icons/AntDesign";
-import routes from "../navigation/routes";
 import { scale } from "react-native-size-matters";
+import { useSelector } from "react-redux";
+
+import routes from "../navigation/routes";
+import { Contact, SearchBar } from "../components";
+import { colors } from "../theme";
 
 const Seperator = () => {
   return <View style={{ paddingVertical: 5 }} />;
 };
 
 export const ContactsScreen = ({ navigation }: any) => {
+  const contacts = useSelector((state) => state.contacts.contacts);
   const [filteredContacts, setFilteredContacts] = useState(contacts);
 
   const filterContacts = (search: string) => {

@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: fontSize.small,
-    color: colors.grey,
+    color: colors.lightGrey,
   },
   input: {
     width: "100%",

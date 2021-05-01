@@ -1,46 +1,40 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
-import * as ImagePicker from "react-native-image-picker/src";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 import { Input, Button, MenuModal, ImageInput } from "../components";
 import { colors } from "../theme";
 import { useForm } from "../hooks";
+import { addContact } from "../actions";
 
-export const AddContact = () => {
+export const AddContact = ({ navigation }: any) => {
   const [showModal, setShowModal] = useState(false);
-  const [state, actions] = useForm();
+  const [state, actions, options] = useForm();
+
+  const dispatch = useDispatch();
 
   const { name, address, number, image } = state;
-  const { setName, setAddress, setNumber, setImage } = actions;
+  const { setName, setAddress, setNumber } = actions;
 
-  const options = [
-    {
-      id: "1",
-      title: "Open Camera",
-      action: () =>
-        ImagePicker.launchCamera(
-          { mediaType: "photo", cameraType: "back" },
-          () => console.log("hi"),
-        ),
-    },
-    {
-      id: "2",
-      title: "Open Gallery",
-      action: () =>
-        ImagePicker.launchImageLibrary({ mediaType: "photo" }, (image: any) =>
-          setImage(image),
-        ),
-    },
-    {
-      id: "3",
-      title: "Remove Image",
-      action: () => {
-        setImage(""), setShowModal(false);
-      },
-    },
-  ];
+  const addToContact = () => {
+    const id = uuidv4();
+    const contact = {
+      contactId: id,
+      name,
+      address,
+      number,
+      image: image?.fileName,
+    };
+
+    dispatch(addContact(contact));
+
+    setTimeout(() => {
+      navigation.navigate("Contacts Detail", { id });
+    }, 3000);
+  };
 
   return (
     <>
@@ -77,18 +71,10 @@ export const AddContact = () => {
                 value={number}
                 onChange={(text: string) => setNumber(text)}
               />
-              <Text
-                style={{
-                  fontSize: scale(20),
-                  color: colors.primary,
-                  textAlign: "right",
-                }}
-              >
-                Add Other Field
-              </Text>
+              <Text style={styles.addFieldText}>Add Other Field</Text>
               <Button
                 title="Create Account"
-                onPress={() => console.log("hello world")}
+                onPress={addToContact}
                 active={name && address && number ? true : false}
               />
             </View>
@@ -126,5 +112,10 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: "100%",
     flex: 1,
+  },
+  addFieldText: {
+    fontSize: scale(20),
+    color: colors.primary,
+    textAlign: "right",
   },
 });

@@ -5,7 +5,6 @@ import {
   Image,
   FlatList,
   TouchableOpacity,
-  StatusBar,
   StyleSheet,
 } from "react-native";
 import { moderateVerticalScale, scale } from "react-native-size-matters";
@@ -54,6 +53,8 @@ export const CallScreen = ({ navigation, route }: any) => {
   const id = route.params.id;
   const contacts = useSelector((state) => state.contacts.contacts);
 
+  console.log("ppppp", id);
+
   const contact = contacts.find((contact) => contact.contactId === id);
 
   const { image, name, number } = contact;
@@ -62,11 +63,6 @@ export const CallScreen = ({ navigation, route }: any) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        animated={true}
-        backgroundColor={colors.BG}
-        barStyle="dark-content"
-      />
       <View style={styles.imageContainer}>
         {image ? (
           <Image source={contact.image} style={styles.image} />

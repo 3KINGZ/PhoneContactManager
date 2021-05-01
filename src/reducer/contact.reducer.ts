@@ -1,5 +1,5 @@
-import contacts from "../utils/constants/contacts";
 import * as types from "../actions/types";
+import contacts from "../utils/constants/contacts";
 
 const initalState = {
   contacts: contacts,
@@ -13,7 +13,13 @@ const contactReducer = (
 
   switch (type) {
     case types.ADD_CONTACT:
-      return { contacts: [...state.contacts, payload] };
+      let contacts = [...state.contacts, payload];
+
+      contacts = contacts.sort((a, b) =>
+        a.name > b.name ? 1 : b.name > a.name ? -1 : 0,
+      );
+
+      return { contacts: contacts };
 
     case types.DELETE_CONTACT:
       const filteredContacts = state.contacts.filter(

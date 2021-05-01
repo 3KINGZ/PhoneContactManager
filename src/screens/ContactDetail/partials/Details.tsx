@@ -3,15 +3,16 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { Detail } from "../../../components";
 
 interface IDetails {
+  id: string;
   email: string;
   phoneNumber: string;
 }
 
-const Details = ({ email, phoneNumber }: IDetails) => {
+const Details = ({ id, email, phoneNumber }: IDetails) => {
   return (
     <View style={styles.container}>
-      <Detail type="phone" emailPhone={phoneNumber} />
-      <Detail type="email" emailPhone={email} />
+      <Detail type="phone" emailPhone={phoneNumber} id={id} />
+      <Detail type="email" emailPhone={email} id={id} />
     </View>
   );
 };
