@@ -13,18 +13,13 @@ const contactReducer = (
 
   switch (type) {
     case types.ADD_CONTACT:
-      let contacts = [...state.contacts, payload];
-
-      contacts = contacts.sort((a, b) =>
-        a.name > b.name ? 1 : b.name > a.name ? -1 : 0,
-      );
-
-      return { contacts: contacts };
+      return { contacts: [...state.contacts, payload] };
 
     case types.DELETE_CONTACT:
       const filteredContacts = state.contacts.filter(
         (contact) => contact.contactId !== payload,
       );
+
       return { contacts: filteredContacts };
 
     default:

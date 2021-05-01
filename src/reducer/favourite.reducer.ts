@@ -14,13 +14,7 @@ const favouriteReducer = (
 
   switch (type) {
     case types.ADD_TO_FAVOURITES:
-      let favourites = [...state.favourites, payload];
-
-      favourites = favourites.sort((a, b) =>
-        a.name > b.name ? 1 : b.name > a.name ? -1 : 0,
-      );
-
-      return { favourites: favourites };
+      return { favourites: [...state.favourites, payload] };
 
     case types.REMOVE_FROM_FAVOURITES:
       const filteredFavourites = state.favourites.filter(

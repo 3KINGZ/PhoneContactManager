@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Detail } from "../../../components";
 
 interface IDetails {
@@ -12,7 +12,7 @@ const Details = ({ id, email, phoneNumber }: IDetails) => {
   return (
     <View style={styles.container}>
       <Detail type="phone" emailPhone={phoneNumber} id={id} />
-      <Detail type="email" emailPhone={email} id={id} />
+      {email ? <Detail type="email" emailPhone={email} id={id} /> : null}
     </View>
   );
 };

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
 import { useDispatch } from "react-redux";
@@ -12,28 +18,29 @@ import { addContact } from "../actions";
 
 export const AddContact = ({ navigation }: any) => {
   const [showModal, setShowModal] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const [state, actions, options] = useForm();
 
   const dispatch = useDispatch();
 
-  const { name, address, number, image } = state;
-  const { setName, setAddress, setNumber } = actions;
+  const { name, address, number, image, email } = state;
+  const { setName, setAddress, setNumber, setEmail } = actions;
 
   const addToContact = () => {
     const id = uuidv4();
+
     const contact = {
       contactId: id,
       name,
       address,
       number,
-      image: image?.fileName,
+      image,
+      email,
     };
 
     dispatch(addContact(contact));
 
-    setTimeout(() => {
-      navigation.navigate("Contacts Detail", { id });
-    }, 3000);
+    navigation.navigate("Contacts Detail", { id });
   };
 
   return (
@@ -70,8 +77,22 @@ export const AddContact = ({ navigation }: any) => {
                 icon="phone"
                 value={number}
                 onChange={(text: string) => setNumber(text)}
+                keyboardType="numeric"
               />
-              <Text style={styles.addFieldText}>Add Other Field</Text>
+              {showMore ? (
+                <Input
+                  placeholder="Email Address"
+                  subtitle="Email"
+                  icon="email"
+                  value={email}
+                  onChange={(text: string) => setEmail(text)}
+                  keyboardType="email-address"
+                />
+              ) : (
+                <TouchableOpacity onPress={() => setShowMore(true)}>
+                  <Text style={styles.addFieldText}>Add Other Field</Text>
+                </TouchableOpacity>
+              )}
               <Button
                 title="Create Account"
                 onPress={addToContact}

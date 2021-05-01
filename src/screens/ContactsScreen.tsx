@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { View, FlatList, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import { scale } from "react-native-size-matters";
@@ -15,6 +15,15 @@ const Seperator = () => {
 export const ContactsScreen = ({ navigation }: any) => {
   const contacts = useSelector((state) => state.contacts.contacts);
   const [filteredContacts, setFilteredContacts] = useState(contacts);
+
+  useEffect(() => {
+    console.log("sorting");
+    const sortContacts: any = contacts.sort(
+      (a: { name: string }, b: { name: string }) =>
+        a.name > b.name ? 1 : b.name > a.name ? -1 : 0,
+    );
+    setFilteredContacts(sortContacts);
+  }, [contacts]);
 
   const filterContacts = (search: string) => {
     setFilteredContacts(

@@ -5,6 +5,7 @@ interface IActions {
   setAddress: any;
   updateNumber: any;
   updateImage: any;
+  updateEmail: any;
 }
 
 const types = {
@@ -12,6 +13,7 @@ const types = {
   updateAddress: "UPDATE_ADDRESS",
   updateNumber: "UPDATE_NUMBER",
   updateImage: "UPDATE_IMAGE",
+  updateEmail: "UPDATE_EMAIL",
 };
 
 const initialState = {
@@ -19,6 +21,7 @@ const initialState = {
   address: "",
   number: "",
   image: "",
+  email: "",
 };
 
 const reducer = (
@@ -40,6 +43,9 @@ const reducer = (
     case types.updateImage:
       return { ...state, image: payload };
 
+    case types.updateEmail:
+      return { ...state, email: payload };
+
     default:
       return state;
   }
@@ -60,6 +66,9 @@ export const useForm = () => {
 
     setImage: (value: string) =>
       dispatch({ type: types.updateImage, payload: value }),
+
+    setEmail: (value: string) =>
+      dispatch({ type: types.updateEmail, payload: value }),
   };
 
   const options = [

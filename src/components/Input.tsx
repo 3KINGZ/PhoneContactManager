@@ -13,6 +13,9 @@ const Person = () => (
 const Location = () => (
   <IIcon name="location-outline" color={colors.primary} size={24} />
 );
+const Email = () => (
+  <IIcon name="mail-outline" color={colors.primary} size={24} />
+);
 
 interface IInput {
   icon?: string;
@@ -20,6 +23,7 @@ interface IInput {
   subtitle: string;
   value: string;
   onChange: (text: string) => void;
+  keyboardType?: any;
 }
 
 export const Input = ({
@@ -28,6 +32,7 @@ export const Input = ({
   subtitle,
   value,
   onChange,
+  keyboardType,
 }: IInput) => {
   return (
     <View style={styles.container}>
@@ -36,6 +41,8 @@ export const Input = ({
           <Person />
         ) : icon === "phone" ? (
           <Phone />
+        ) : icon === "email" ? (
+          <Email />
         ) : (
           <Location />
         )}
@@ -50,6 +57,7 @@ export const Input = ({
         <TextInput
           style={value ? styles.input : styles.inputAbs}
           onChangeText={onChange}
+          keyboardType={keyboardType}
         />
       </View>
     </View>

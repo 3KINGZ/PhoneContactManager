@@ -1,27 +1,16 @@
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import { scale } from "react-native-size-matters";
 
 import { ContactTitle } from "../../components";
-import contacts from "../../utils/constants/contacts";
-import recents from "../../utils/constants/recents";
 import { ContactTabView } from "./partials/ContactTabView";
 import { colors, fontSize } from "../../theme";
+import { useContactDetail } from "../../hooks";
 
 export const ContactDetail = ({ route, navigation }: any) => {
-  const [contact, setContact] = useState<IContact | any>({});
-  const [logs, setLogs] = useState<any>();
   const id = route.params.id;
-
-  useEffect(() => {
-    const contact = contacts.find(
-      (contact: IContact) => contact.contactId === id,
-    );
-    const logs = recents.filter((recent) => recent.contactId === id);
-    setContact(contact);
-    setLogs(logs);
-  }, []);
+  const [contact, logs] = useContactDetail(id);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -42,10 +31,7 @@ export const ContactDetail = ({ route, navigation }: any) => {
   return (
     <View style={styles.container}>
       {image ? (
-        <Image
-          source={image}
-          style={{ width: 150, height: 200, marginTop: 20, borderRadius: 5 }}
-        />
+        <Image source={image} style={styles.image} />
       ) : (
         <ContactTitle name={name} />
       )}
@@ -72,6 +58,7 @@ const styles = StyleSheet.create({
   scene: {
     flex: 1,
   },
+  image: { width: 150, height: 200, marginTop: 20, borderRadius: 5 },
   name: {
     fontSize: scale(20),
     fontWeight: "bold",
