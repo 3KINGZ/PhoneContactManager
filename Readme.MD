@@ -1,6 +1,6 @@
 ## PhoneContactManager
 
-<img src="https://github.com/3KINGZ/PhoneContactManager/blob/master/Screenshot_20210502-075611.png?raw=true" align="left" height="150" width="150" >
+<img src="https://github.com/3KINGZ/PhoneContactManager/blob/master/Screenshot_20210502-075611.png?raw=true" align="left" height="400" width="400" >
 
 ![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/Screenshot_20210502-075752.png?raw=true)
 
