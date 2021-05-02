@@ -8,6 +8,7 @@ let contacts = [
     email: "amiliaelie@gmail.com",
     number: "+880 33456 777",
     image: contactImages.image2,
+    favourite: true,
   },
   {
     contactId: "Allison Becker",
@@ -15,6 +16,7 @@ let contacts = [
     address: "Rio de janeiro, Brazil ",
     email: "abecker@gmail.com",
     number: "+880 33456 777",
+    favourite: true,
   },
   {
     contactId: "Serena Williams",
@@ -38,7 +40,7 @@ let contacts = [
     address: "Porto, Portugal",
     email: "c.ronaldo@gmail.com",
     number: "+880 1010 1010",
-    image: contactImages.image2,
+    favourite: true,
   },
   {
     contactId: "Sergio Ramos",
@@ -61,6 +63,7 @@ let contacts = [
     address: "Paris, France",
     email: "amiliaelie@gmail.com",
     number: "+880 33456 777",
+    image: contactImages.image2,
   },
   {
     contactId: "Trent Arnold",
@@ -69,6 +72,7 @@ let contacts = [
     email: "tarnold@gmail.com",
     number: "+880 33456 777",
     image: contactImages.image5,
+    favourite: true,
   },
   {
     contactId: "Wilfred Ndidi",
@@ -93,6 +97,7 @@ let contacts = [
     email: "amiliaelie@gmail.com",
     number: "+880 33456 777",
     image: contactImages.image2,
+    favourite: true,
   },
   {
     contactId: "Kyle Walker",
@@ -107,6 +112,7 @@ let contacts = [
     address: "Madrid, Spain",
     email: "ramos@gmail.com",
     number: "+880 33456 777",
+    favourite: true,
   },
 ];
 

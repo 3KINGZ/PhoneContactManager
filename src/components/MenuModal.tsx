@@ -16,7 +16,7 @@ interface IOption {
   title: string;
   last?: boolean;
   action: () => any;
-  onClose: () => any;
+  onClose: () => any | void;
 }
 
 interface IOptionArr {
@@ -43,8 +43,8 @@ const Option = ({ title, action, onClose }: IOption) => {
 };
 
 interface IMenuModal {
-  visible: boolean;
-  onClose: () => any;
+  visible: boolean | any;
+  onClose: any;
   options: IOptionArr[];
 }
 

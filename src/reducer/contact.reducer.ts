@@ -15,6 +15,18 @@ const contactReducer = (
     case types.ADD_CONTACT:
       return { contacts: [...state.contacts, payload] };
 
+    case types.ADD_TO_FAVOURITES:
+      const contact: any = state.contacts.filter(
+        (contact: any) => contact.id === payload,
+      );
+      contact.favourite = true;
+
+      const filtered = state.contacts.filter(
+        (contact: any) => contact.id !== payload,
+      );
+
+      return { contacts: [...filtered, contact] };
+
     case types.DELETE_CONTACT:
       const filteredContacts = state.contacts.filter(
         (contact) => contact.contactId !== payload,

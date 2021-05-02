@@ -1,9 +1,11 @@
 import React, { useState, useLayoutEffect } from "react";
 import { View, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/AntDesign";
+import { useSelector } from "react-redux";
+
 import { Favourite, SearchBar } from "../components";
 import { colors, fontSize } from "../theme";
 import favourites from "../utils/constants/favourites";
-import Icon from "react-native-vector-icons/AntDesign";
 
 export const Favourites = ({ navigation }: any) => {
   useLayoutEffect(() => {

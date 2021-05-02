@@ -1,33 +1,61 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { scale } from "react-native-size-matters";
 
 import { colors } from "../theme";
 import { ContactTitle } from "./ContactTitle";
+import { MenuModal } from "./MenuModal";
+import { useModal } from "../hooks";
+
+type Props = {
+  onLongPress: (event: GestureResponderEvent) => void;
+};
+
+const options = [
+  {
+    id: "1",
+    title: "Remove from favourites",
+    action: () => console.log("Delete All Call Logs For this Number"),
+  },
+];
 
 export const Favourite = ({ contact }: any) => {
+  const [showModal, openModal, closeModal] = useModal();
+
   const { contactId, image, name, address } = contact;
+
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate("Contacts Detail Fav", { id: contactId })
-      }
-    >
-      <View style={styles.container}>
-        {image ? (
-          <Image source={image} style={styles.image} />
-        ) : (
-          <ContactTitle name={name} />
-        )}
-        <View style={styles.infoContainer}>
-          <Text style={styles.title}>{name}</Text>
-          <Text style={styles.subtitle}>{address}</Text>
+    <>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Contacts Detail Fav", { id: contactId })
+        }
+        onLongPress={openModal}
+      >
+        <View style={styles.container}>
+          {image ? (
+            <Image source={image} style={styles.image} />
+          ) : (
+            <ContactTitle name={name} />
+          )}
+          <View style={styles.infoContainer}>
+            <Text style={styles.title}>{name}</Text>
+            <Text style={styles.subtitle}>{address}</Text>
+          </View>
         </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+      <MenuModal visible={showModal} onClose={closeModal} />
+    </>
   );
 };
 
