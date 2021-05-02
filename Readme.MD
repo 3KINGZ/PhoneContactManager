@@ -1,15 +1,13 @@
 ## PhoneContactManager
 
-<img src="https://github.com/3KINGZ/PhoneContactManager/blob/master/Screenshot_20210502-075611.png?raw=true" align="left" height="400" width="400" >
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075611.png?raw=true)
 
-![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/Screenshot_20210502-075752.png?raw=true)
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075752.png?raw=true)
 
-![]("Screenshot_20210502-075752.png")
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075624.png?raw=true)
 
-![]("Screenshot_20210502-075624.png")
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075558.png?raw=true)
 
-![]("Screenshot_20210502-075558.png")
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075707.png?raw=true)
 
-![]("Screenshot_20210502-075707.png")
-
-![]("Screenshot_20210502-075806.png")
+![screen1](https://github.com/3KINGZ/PhoneContactManager/blob/master/screenshots/Screenshot_20210502-075806.png?raw=true)
