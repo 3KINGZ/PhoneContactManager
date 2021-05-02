@@ -17,7 +17,6 @@ export const ContactsScreen = ({ navigation }: any) => {
   const [filteredContacts, setFilteredContacts] = useState(contacts);
 
   useEffect(() => {
-    console.log("sorting");
     const sortContacts: any = contacts.sort(
       (a: { name: string }, b: { name: string }) =>
         a.name > b.name ? 1 : b.name > a.name ? -1 : 0,

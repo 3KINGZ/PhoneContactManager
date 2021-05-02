@@ -18,8 +18,6 @@ interface IDetail {
 export const Detail = ({ type, emailPhone, id }: IDetail) => {
   const navigation = useNavigation();
 
-  console.log("detail comp", id);
-
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>

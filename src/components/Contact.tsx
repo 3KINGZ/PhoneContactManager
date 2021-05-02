@@ -38,7 +38,7 @@ export const Contact = ({ contact }: IC) => {
     {
       id: "2",
       title: "Edit Contact",
-      action: () => console.log("Copy Number"),
+      action: undefined,
     },
   ];
 

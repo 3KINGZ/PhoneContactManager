@@ -20,40 +20,38 @@ const buttons = [
   {
     id: uuidv4(),
     icon: "record",
-    action: () => console.log("record"),
+    action: undefined,
   },
   {
     id: uuidv4(),
     icon: "pause",
-    action: () => console.log("pause"),
+    action: undefined,
   },
   {
     id: uuidv4(),
     icon: "add",
-    action: () => console.log("add"),
+    action: undefined,
   },
   {
     id: uuidv4(),
     icon: "volume",
-    action: () => console.log("volume"),
+    action: undefined,
   },
   {
     id: uuidv4(),
     icon: "speaker",
-    action: () => console.log("speaker"),
+    action: undefined,
   },
   {
     id: uuidv4(),
     icon: "contact",
-    action: () => console.log("contact"),
+    action: undefined,
   },
 ];
 
 export const CallScreen = ({ navigation, route }: any) => {
   const id = route.params.id;
   const contacts = useSelector((state) => state.contacts.contacts);
-
-  console.log("ppppp", id);
 
   const contact = contacts.find((contact) => contact.contactId === id);
 

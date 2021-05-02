@@ -23,7 +23,7 @@ const options = [
   {
     id: "1",
     title: "Remove from favourites",
-    action: () => console.log("Delete All Call Logs For this Number"),
+    action: undefined,
   },
 ];
 

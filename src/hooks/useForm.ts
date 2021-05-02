@@ -78,7 +78,7 @@ export const useForm = () => {
       action: () =>
         ImagePicker.launchCamera(
           { mediaType: "photo", cameraType: "back" },
-          () => console.log("hi"),
+          () => console.log("opening camera"),
         ),
     },
     {

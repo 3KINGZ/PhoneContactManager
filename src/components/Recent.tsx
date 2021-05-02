@@ -55,19 +55,18 @@ export const Recent = ({ details }: IRecent) => {
 
   const openModal = (id: string) => {
     setShowModal(true);
-    console.log(id);
   };
 
   const options = [
     {
       id: "1",
       title: "Delete all call logs of this number",
-      action: () => console.log("Delete All Call Logs For this Number"),
+      action: undefined,
     },
     {
       id: "2",
       title: "Copy number",
-      action: () => console.log("Copy Number"),
+      action: undefined,
     },
   ];
 
