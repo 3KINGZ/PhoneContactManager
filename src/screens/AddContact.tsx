@@ -10,6 +10,7 @@ import { scale, verticalScale } from "react-native-size-matters";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import OptionsMenu from "react-native-option-menu";
 
 import { Input, Button, MenuModal, ImageInput } from "../components";
 import { colors } from "../theme";
@@ -47,7 +48,12 @@ export const AddContact = ({ navigation }: any) => {
     <>
       <ScrollView style={{ flex: 1, backgroundColor: colors.BG }}>
         <View style={styles.container}>
-          <ImageInput image={image} onPress={() => setShowModal(true)} />
+          <OptionsMenu
+            customButton={<ImageInput image={image} />}
+            destructiveIndex={1}
+            options={[options[0].title, options[1].title, options[2].title]}
+            actions={[options[0].action, options[1].action, options[2].action]}
+          />
           <View style={styles.textContainer}>
             <Text style={styles.text1}>Add Photo</Text>
             <Text style={styles.text2}>Will only be save on the phone</Text>
@@ -96,7 +102,7 @@ export const AddContact = ({ navigation }: any) => {
               <Button
                 title="Create Account"
                 onPress={addToContact}
-                active={name && address && number ? true : false}
+                disabled={name && address && number ? true : false}
               />
             </View>
           </KeyboardAwareScrollView>

@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Modal,
-  TouchableHighlight,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
 import {
   moderateScale,
   moderateVerticalScale,
@@ -13,9 +7,12 @@ import {
 } from "react-native-size-matters";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
+import { Menu } from "react-native-paper";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 import { colors } from "../theme";
-import { MenuModal } from "./MenuModal";
+import { addToHistory, deleteCallHistory } from "../actions";
 
 interface IRecent {
   details: {
@@ -48,77 +45,68 @@ const recentIcon: { [key: string]: string } = {
 
 export const Recent = ({ details }: IRecent) => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const { id, contactId, name, number, time, type } = details;
 
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = (id: string) => {
-    setShowModal(true);
+  const makeCall = () => {
+    dispatch(addToHistory({ ...details, id: uuidv4() }));
+
+    navigation.navigate("Call", {
+      screen: "Call-Outgoing",
+      params: { id: contactId },
+    });
   };
 
-  const options = [
-    {
-      id: "1",
-      title: "Delete all call logs of this number",
-      action: undefined,
-    },
-    {
-      id: "2",
-      title: "Copy number",
-      action: undefined,
-    },
-  ];
+  const _deleteCallHistory = () => {
+    dispatch(deleteCallHistory(id));
+    setShowModal(false);
+  };
 
   return (
-    <>
-      <TouchableHighlight
-        underlayColor={colors.lightGrey}
-        onPress={() =>
-          navigation.navigate("Call", {
-            screen: "Call-Outgoing",
-            params: { id: contactId },
-          })
-        }
-        onLongPress={() => openModal(id)}
-      >
-        <View style={[styles.container]}>
-          <View
-            style={[
-              styles.iconContainer,
-              { backgroundColor: recentColorsBG[type] },
-            ]}
-          >
-            <Icon
-              name={recentIcon[type]}
-              color={recentColors[type]}
-              size={24}
-            />
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.name} numberOfLines={1}>
-              {name}
+    <Menu
+      visible={showModal}
+      onDismiss={() => setShowModal(false)}
+      anchor={
+        <TouchableHighlight
+          underlayColor={colors.lightGrey}
+          onPress={makeCall}
+          onLongPress={() => setShowModal(true)}
+        >
+          <View style={[styles.container]}>
+            <View
+              style={[
+                styles.iconContainer,
+                { backgroundColor: recentColorsBG[type] },
+              ]}
+            >
+              <Icon
+                name={recentIcon[type]}
+                color={recentColors[type]}
+                size={24}
+              />
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.name} numberOfLines={1}>
+                {name || number}
+              </Text>
+              <Text style={styles.number}>{number}</Text>
+            </View>
+            <Text style={{ color: recentColors[type], fontSize: scale(14) }}>
+              {time}
             </Text>
-            <Text style={styles.number}>{number}</Text>
           </View>
-          <Text style={{ color: recentColors[type], fontSize: scale(14) }}>
-            {time}
-          </Text>
-        </View>
-      </TouchableHighlight>
-      <Modal
-        visible={showModal}
-        transparent={true}
-        onRequestClose={() => setShowModal(!showModal)}
-        animationType="fade"
-      >
-        <MenuModal
-          visible={showModal}
-          options={options}
-          onClose={() => setShowModal(false)}
-        />
-      </Modal>
-    </>
+        </TouchableHighlight>
+      }
+    >
+      <Menu.Item onPress={_deleteCallHistory} title="Delete" />
+      <Menu.Item
+        onPress={() => {}}
+        title="Delete all call logs of this number"
+      />
+    </Menu>
   );
 };
 

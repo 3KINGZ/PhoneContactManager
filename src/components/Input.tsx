@@ -24,6 +24,7 @@ interface IInput {
   value: string;
   onChange: (text: string) => void;
   keyboardType?: any;
+  defaultValue?: string;
 }
 
 export const Input = ({
@@ -33,6 +34,7 @@ export const Input = ({
   value,
   onChange,
   keyboardType,
+  defaultValue,
 }: IInput) => {
   return (
     <View style={styles.container}>
@@ -48,7 +50,7 @@ export const Input = ({
         )}
       </View>
       <View style={styles.infoContainer}>
-        {!value ? (
+        {!value || !defaultValue ? (
           <View style={{ zIndex: 0 }}>
             <Text style={styles.placeholder}>{placeholder}</Text>
             <Text style={styles.subtitle}>{subtitle}</Text>
@@ -58,6 +60,7 @@ export const Input = ({
           style={value ? styles.input : styles.inputAbs}
           onChangeText={onChange}
           keyboardType={keyboardType}
+          defaultValue={defaultValue}
         />
       </View>
     </View>

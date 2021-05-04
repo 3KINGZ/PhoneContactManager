@@ -12,8 +12,8 @@ const historyReducer = (
   const { type, payload } = action;
 
   switch (type) {
-    case types.MAKE_CALL:
-      return { recents: [...state.history, payload] };
+    case types.ADD_TO_HISTORY:
+      return { history: [payload, ...state.history] };
 
     case types.DELETE_CALL_HISTORY:
       const filteredHistory = state.history.filter((hst) => hst.id !== payload);

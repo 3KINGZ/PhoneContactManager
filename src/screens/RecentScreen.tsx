@@ -1,27 +1,28 @@
 import React, { useLayoutEffect } from "react";
-import { View, TouchableOpacity, StatusBar, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/Feather";
+import { View, StatusBar, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
+import OptionsMenu from "react-native-option-menu";
 
 import { colors, fontSize } from "../theme";
-import { Recents } from "../components";
+import { MoreIcon, Recents } from "../components";
 
 export const RecentScreen = ({ navigation }: any) => {
-  const history = useSelector((state) => state.history.history);
+  const history = useSelector((state: any) => state.history.history);
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity>
-          <Icon
-            name="more-vertical"
-            size={fontSize.large}
-            style={{ marginRight: 15 }}
-          />
-        </TouchableOpacity>
+        <OptionsMenu
+          customButton={MoreIcon}
+          destructiveIndex={1}
+          options={["Delete all call logs"]}
+          actions={[() => console.log("Add to favourites")]}
+        />
       ),
     });
   }, [navigation]);
+
+  console.log(history);
 
   return (
     <View style={styles.container}>

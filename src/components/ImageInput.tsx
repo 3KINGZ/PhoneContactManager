@@ -6,22 +6,17 @@ import { colors } from "../theme";
 
 interface IImageInput {
   image: string;
-  onPress: () => any;
 }
 
-export const ImageInput = ({ image, onPress }: IImageInput) => {
+export const ImageInput = ({ image }: IImageInput) => {
   return (
     <>
       {image ? (
-        <TouchableOpacity onPress={onPress}>
-          <Image source={image} style={styles.image} />
-        </TouchableOpacity>
+        <Image source={image} style={styles.image} />
       ) : (
-        <TouchableOpacity onPress={onPress}>
-          <View style={styles.imageInput}>
-            <Icon name="camera-outline" size={38} color={colors.primary} />
-          </View>
-        </TouchableOpacity>
+        <View style={styles.imageInput}>
+          <Icon name="camera-outline" size={38} color={colors.primary} />
+        </View>
       )}
     </>
   );

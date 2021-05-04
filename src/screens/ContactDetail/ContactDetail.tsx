@@ -1,51 +1,58 @@
 import React, { useLayoutEffect } from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/Feather";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { scale } from "react-native-size-matters";
+import OptionsMenu from "react-native-option-menu";
 
-import { ContactTitle } from "../../components";
+import { ContactTitle, MoreIcon } from "../../components";
 import { ContactTabView } from "./partials/ContactTabView";
-import { colors, fontSize } from "../../theme";
+import { colors } from "../../theme";
 import { useContactDetail } from "../../hooks";
+import { AfterInteractions } from "react-native-interactions";
+import { PlaceHolderScreen } from "../PlaceHolderScreen";
 
 export const ContactDetail = ({ route, navigation }: any) => {
   const id = route.params.id;
   const [contact, logs] = useContactDetail(id);
 
+  const { contactId, name, image, address, email, number } = contact;
+
+  const gotoEdit = () => {
+    navigation.navigate("Edit Contact", { id });
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity>
-          <Icon
-            style={{ marginRight: 15 }}
-            name="more-vertical"
-            size={fontSize.large}
-          />
-        </TouchableOpacity>
+        <OptionsMenu
+          customButton={MoreIcon}
+          destructiveIndex={1}
+          options={["Edit Contact", "Add to favourites", "Cancel"]}
+          actions={[gotoEdit, gotoEdit]}
+        />
       ),
     });
   }, [navigation]);
 
-  const { contactId, name, image, address, email, number } = contact;
-
   return (
-    <View style={styles.container}>
-      {image ? (
-        <Image source={image} style={styles.image} />
-      ) : (
-        <ContactTitle name={name} />
-      )}
-      <View style={{ marginTop: 10 }}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.address}>{address}</Text>
+    <AfterInteractions placeholder={<PlaceHolderScreen />}>
+      <View style={styles.container}>
+        {image ? (
+          <Image source={image} style={styles.image} />
+        ) : (
+          <ContactTitle name={name} />
+        )}
+        <View style={{ marginTop: 10 }}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.address}>{address}</Text>
+        </View>
+        <ContactTabView
+          id={contactId}
+          email={email}
+          number={number}
+          logs={logs}
+        />
       </View>
-      <ContactTabView
-        id={contactId}
-        email={email}
-        number={number}
-        logs={logs}
-      />
-    </View>
+    </AfterInteractions>
   );
 };
 

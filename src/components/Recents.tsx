@@ -1,5 +1,6 @@
 import React from "react";
 import { View, FlatList } from "react-native";
+
 import { colors } from "../theme";
 import { Recent } from "./Recent";
 

@@ -34,6 +34,15 @@ const contactReducer = (
 
       return { contacts: filteredContacts };
 
+    case types.EDIT_CONTACT:
+      const contacts = state.contacts.filter(
+        (contact) => contact.contactId !== payload.id,
+      );
+
+      contacts.push(payload.contact);
+
+      return { contacts: contacts };
+
     default:
       return state;
   }

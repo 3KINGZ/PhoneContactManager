@@ -19,20 +19,20 @@ type Props = {
   onLongPress: (event: GestureResponderEvent) => void;
 };
 
-const options = [
-  {
-    id: "1",
-    title: "Remove from favourites",
-    action: undefined,
-  },
-];
-
 export const Favourite = ({ contact }: any) => {
   const [showModal, openModal, closeModal] = useModal();
 
   const { contactId, image, name, address } = contact;
 
   const navigation = useNavigation();
+
+  const options = [
+    {
+      id: "1",
+      title: "Remove from favourite",
+      action: () => undefined,
+    },
+  ];
 
   return (
     <>
@@ -54,7 +54,7 @@ export const Favourite = ({ contact }: any) => {
           </View>
         </View>
       </TouchableOpacity>
-      <MenuModal visible={showModal} onClose={closeModal} />
+      <MenuModal visible={showModal} onClose={closeModal} options={options} />
     </>
   );
 };

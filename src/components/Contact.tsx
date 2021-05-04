@@ -9,10 +9,10 @@ import {
 import { moderateScale, scale } from "react-native-size-matters";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
+import { Menu } from "react-native-paper";
 
 import { colors } from "../theme";
 import { ContactTitle } from "./ContactTitle";
-import { MenuModal } from "./MenuModal";
 import { deleteContact } from "../actions";
 interface IC {
   contact: IContact;
@@ -27,48 +27,43 @@ export const Contact = ({ contact }: IC) => {
 
   const _deleteContact = () => {
     dispatch(deleteContact(contactId));
+    setShowModal(false);
   };
 
-  const options = [
-    {
-      id: "1",
-      title: "Delete Contact",
-      action: _deleteContact,
-    },
-    {
-      id: "2",
-      title: "Edit Contact",
-      action: undefined,
-    },
-  ];
+  const gotoEdit = () => {
+    navigation.navigate("Edit Contact", { id: contactId });
+    setShowModal(false);
+  };
 
   return (
-    <>
-      <TouchableHighlight
-        underlayColor={colors.veryLightGrey}
-        onPress={() =>
-          navigation.navigate("Contacts Detail", { id: contactId })
-        }
-        onLongPress={() => setShowModal(true)}
-      >
-        <View style={styles.container}>
-          {image ? (
-            <Image source={image} style={styles.image} />
-          ) : (
-            <ContactTitle type="small" name={name} />
-          )}
-          <View style={styles.textContainer}>
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.address}>{address}</Text>
+    <Menu
+      visible={showModal}
+      onDismiss={() => setShowModal(false)}
+      anchor={
+        <TouchableHighlight
+          underlayColor={colors.veryLightGrey}
+          onPress={() =>
+            navigation.navigate("Contacts Detail", { id: contactId })
+          }
+          onLongPress={() => setShowModal(true)}
+        >
+          <View style={styles.container}>
+            {image ? (
+              <Image source={image} style={styles.image} />
+            ) : (
+              <ContactTitle type="small" name={name} />
+            )}
+            <View style={styles.textContainer}>
+              <Text style={styles.name}>{name}</Text>
+              <Text style={styles.address}>{address}</Text>
+            </View>
           </View>
-        </View>
-      </TouchableHighlight>
-      <MenuModal
-        visible={showModal}
-        onClose={() => setShowModal(false)}
-        options={options}
-      />
-    </>
+        </TouchableHighlight>
+      }
+    >
+      <Menu.Item onPress={_deleteContact} title="Delete Contact" />
+      <Menu.Item onPress={gotoEdit} title="Edit Contact" />
+    </Menu>
   );
 };
 

@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import IIcon from "react-native-vector-icons/Ionicons";
 import { moderateScale } from "react-native-size-matters";
+
 import { colors } from "../theme";
 
 interface ITabIcon {

@@ -2,6 +2,7 @@ import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import Icon from "react-native-vector-icons/AntDesign";
+
 import { colors, fontSize } from "../theme";
 
 export const SearchBar = ({ onChange }: any) => {

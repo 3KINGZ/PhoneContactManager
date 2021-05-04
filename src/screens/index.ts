@@ -6,3 +6,5 @@ export * from "./RecentsDetail";
 export * from "./ContactDetail/ContactDetail";
 export * from "./AddContact";
 export * from "./CallScreen";
+export * from "./EditContact";
+export * from "./PlaceHolderScreen";

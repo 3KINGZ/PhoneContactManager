@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { scale } from "react-native-size-matters";
-import { colors } from "../theme";
 import Icon from "react-native-vector-icons/FontAwesome";
 import IIcon from "react-native-vector-icons/Ionicons";
+
+import { colors } from "../theme";
 
 interface IDialPadButton {
   dial: { id: string; number?: string; string?: string };

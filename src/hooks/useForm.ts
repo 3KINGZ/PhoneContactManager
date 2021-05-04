@@ -16,18 +16,27 @@ const types = {
   updateEmail: "UPDATE_EMAIL",
 };
 
-const initialState = {
-  name: "",
-  address: "",
-  number: "",
-  image: "",
-  email: "",
+const initialState = (initalValues: any) => {
+  if (initalValues) {
+    return {
+      name: initalValues.name,
+      address: initalValues.address,
+      number: initalValues.number,
+      image: initalValues.image,
+      email: initalValues.email,
+    };
+  }
+
+  return {
+    name: "",
+    address: "",
+    number: "",
+    image: "",
+    email: "",
+  };
 };
 
-const reducer = (
-  state: { name: string; address: string; number: string; image: string },
-  action: { type: string; payload: any },
-) => {
+const reducer = (state: any, action: { type: string; payload: any }) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -51,8 +60,8 @@ const reducer = (
   }
 };
 
-export const useForm = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const useForm = (initialValues?: any) => {
+  const [state, dispatch] = useReducer(reducer, initialState(initialValues));
 
   const actions: any = {
     setName: (value: string) =>

@@ -6,14 +6,14 @@ import { colors } from "../theme";
 
 interface IButton {
   title: string;
-  active: boolean;
+  disabled?: boolean;
   onPress: () => any;
 }
 
-export const Button = ({ title, active, onPress }: IButton) => {
+export const Button = ({ title, disabled, onPress }: IButton) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={[styles.container, { opacity: !active ? 0.5 : 1 }]}>
+      <View style={[styles.container, { opacity: !disabled ? 0.5 : 1 }]}>
         <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
