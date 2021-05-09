@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import AppTabNavigation from "./AppTabNavigation";
-import CallStackNavigation from "./CallStackNavigation";
+import AppTabNavigator from "./AppTabNavigator";
+import CallStackNavigator from "./CallStackNavigator";
 
 const Stack = createStackNavigator();
 
@@ -11,12 +11,12 @@ const RootStackNavigation = () => {
     <Stack.Navigator headerMode="none">
       <Stack.Screen
         name="App"
-        component={AppTabNavigation}
+        component={AppTabNavigator}
         options={{ animationEnabled: false }}
       />
       <Stack.Screen
         name="Call"
-        component={CallStackNavigation}
+        component={CallStackNavigator}
         options={{ animationEnabled: false }}
       />
     </Stack.Navigator>

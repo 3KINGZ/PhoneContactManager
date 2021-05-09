@@ -8,7 +8,7 @@ import FavouritesStackNavigator from "./FavouritesStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
-export default function AppTabNavigation() {
+const AppTabNavigator = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -60,4 +60,6 @@ export default function AppTabNavigation() {
       />
     </Tab.Navigator>
   );
-}
+};
+
+export default AppTabNavigator;

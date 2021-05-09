@@ -20,6 +20,7 @@ import { editContact } from "../actions";
 export const EditContact = ({ navigation, route }: any) => {
   const id = route.params.id;
   const contacts = useSelector((state: any) => state.contacts.contacts);
+
   const contact = contacts.find(
     (contact: IContact) => contact.contactId === id,
   );

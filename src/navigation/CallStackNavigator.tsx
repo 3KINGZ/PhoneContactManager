@@ -4,7 +4,7 @@ import { CallScreen } from "../screens";
 
 const Stack = createStackNavigator();
 
-const CallStackNavigation = () => {
+const CallStackNavigator = () => {
   return (
     <Stack.Navigator headerMode="none">
       <Stack.Screen name="Call-Outgoing" component={CallScreen} />
@@ -12,4 +12,4 @@ const CallStackNavigation = () => {
   );
 };
 
-export default CallStackNavigation;
+export default CallStackNavigator;
