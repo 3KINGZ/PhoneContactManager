@@ -14,6 +14,7 @@ import { colors } from "../theme";
 import { ContactTitle } from "./ContactTitle";
 import { MenuModal } from "./MenuModal";
 import { useModal } from "../hooks";
+import routes from "../navigation/routes";
 
 type Props = {
   onLongPress: (event: GestureResponderEvent) => void;
@@ -38,7 +39,9 @@ export const Favourite = ({ contact }: any) => {
     <>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate("Contacts Detail Fav", { id: contactId })
+          navigation.navigate(routes.FAVOURITES_CONTACT_DETAIL, {
+            id: contactId,
+          })
         }
         onLongPress={openModal}
       >

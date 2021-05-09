@@ -6,6 +6,7 @@ import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/core";
 
 import { colors, fontSize } from "../theme";
+import routes from "../navigation/routes";
 
 const gmail = require("../assets/images/gmail.png");
 
@@ -47,7 +48,7 @@ export const Detail = ({ type, emailPhone, id }: IDetail) => {
           <TouchableOpacity
             onPress={() =>
               navigation.navigate("Call", {
-                screen: "Call-Outgoing",
+                screen: routes.CALL_OUTGOING,
                 params: { id },
               })
             }

@@ -14,6 +14,7 @@ import { Menu } from "react-native-paper";
 import { colors } from "../theme";
 import { ContactTitle } from "./ContactTitle";
 import { deleteContact } from "../actions";
+import routes from "../navigation/routes";
 interface IC {
   contact: IContact;
 }
@@ -43,7 +44,7 @@ export const Contact = ({ contact }: IC) => {
         <TouchableHighlight
           underlayColor={colors.veryLightGrey}
           onPress={() =>
-            navigation.navigate("Contacts Detail", { id: contactId })
+            navigation.navigate(routes.CONTACT_DETAIL, { id: contactId })
           }
           onLongPress={() => setShowModal(true)}
         >

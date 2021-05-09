@@ -16,6 +16,7 @@ import { Input, Button, MenuModal, ImageInput } from "../components";
 import { colors } from "../theme";
 import { useForm } from "../hooks";
 import { addContact } from "../actions";
+import routes from "../navigation/routes";
 
 export const AddContact = ({ navigation }: any) => {
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +42,7 @@ export const AddContact = ({ navigation }: any) => {
 
     dispatch(addContact(contact));
 
-    navigation.navigate("Contacts Detail", { id });
+    navigation.navigate(routes.CONTACT_DETAIL, { id });
   };
 
   return (

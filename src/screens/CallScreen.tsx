@@ -15,6 +15,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { colors } from "../theme";
 import { CallButton } from "../components";
 import { generateTitleCase } from "../utils";
+import routes from "../navigation/routes";
 
 const buttons = [
   {
@@ -51,9 +52,11 @@ const buttons = [
 
 export const CallScreen = ({ navigation, route }: any) => {
   const id = route.params.id;
-  const contacts = useSelector((state) => state.contacts.contacts);
+  const contacts = useSelector((state: IState) => state.contacts.contacts);
 
-  const contact = contacts.find((contact) => contact.contactId === id);
+  const contact: IContact | any = contacts.find(
+    (contact: IContact) => contact.contactId === id,
+  );
 
   const { image, name, number } = contact;
 
@@ -86,7 +89,9 @@ export const CallScreen = ({ navigation, route }: any) => {
         />
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("App", { screen: "Recent" })}
+        onPress={() =>
+          navigation.navigate("App", { screen: routes.RECENT_STACK_NAVIGATOR })
+        }
       >
         <View style={styles.endCall}>
           <Icon name="phone" color={colors.BG} size={40} />

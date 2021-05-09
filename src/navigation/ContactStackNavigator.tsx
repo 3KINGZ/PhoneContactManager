@@ -5,10 +5,9 @@ import {
   ContactDetail,
   AddContact,
   EditContact,
-  PlaceHolderScreen,
 } from "../screens";
 import { headerProps } from "./navigationTheme";
-import { AfterInteractions } from "react-native-interactions";
+import routes from "./routes";
 
 const Stack = createStackNavigator();
 
@@ -16,14 +15,14 @@ const ContactStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Contacts"
+        name={routes.CONTACTS}
         component={ContactsScreen}
         options={{
           ...headerProps,
         }}
       />
       <Stack.Screen
-        name="Contacts Detail"
+        name={routes.CONTACT_DETAIL}
         component={ContactDetail}
         options={{
           ...headerProps,

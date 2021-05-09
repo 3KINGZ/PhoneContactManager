@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RecentScreen, RecentsDetail } from "../screens";
 import { headerProps } from "./navigationTheme";
+import routes from "./routes";
 
 const Stack = createStackNavigator();
 
@@ -9,13 +10,13 @@ const RecentStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Recent"
+        name={routes.RECENT}
         component={RecentScreen}
         options={{
           ...headerProps,
         }}
       />
-      <Stack.Screen name="Recent Detail" component={RecentsDetail} />
+      <Stack.Screen name={routes.RECENT_DETAIL} component={RecentsDetail} />
     </Stack.Navigator>
   );
 };

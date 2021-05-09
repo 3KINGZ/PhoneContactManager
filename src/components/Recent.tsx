@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { colors } from "../theme";
 import { addToHistory, deleteCallHistory } from "../actions";
+import routes from "../navigation/routes";
 
 interface IRecent {
   details: {
@@ -55,7 +56,7 @@ export const Recent = ({ details }: IRecent) => {
     dispatch(addToHistory({ ...details, id: uuidv4() }));
 
     navigation.navigate("Call", {
-      screen: "Call-Outgoing",
+      screen: routes.CALL_OUTGOING,
       params: { id: contactId },
     });
   };

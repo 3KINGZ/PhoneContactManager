@@ -1,10 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DialPadScreen, Favourites } from "../screens";
+import { DialPadScreen } from "../screens";
 import { TabIcon } from "../components";
 import RecentStackNavigator from "./RecentStackNavigator";
 import ContactStackNavigator from "./ContactStackNavigator";
 import FavouritesStackNavigator from "./FavouritesStackNavigator";
+import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ const AppTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Recent"
+        name={routes.RECENT_STACK_NAVIGATOR}
         component={RecentStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -41,7 +42,7 @@ const AppTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Contacts"
+        name={routes.CONTACT_STACK_NAVIGATOR}
         component={ContactStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -50,7 +51,7 @@ const AppTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Favourites"
+        name={routes.FAVOURITES_STACK_NAVIGATOR}
         component={FavouritesStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
